@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers"
+    "\\bin",
+    "\\bin\\Debug",
+    "\\bin\\Release",
+    "\\Controllers",
+    "\\Models",
+    "\\Properties"
   ],
+  "SelectedNode": "\\Controllers\\AutobusiController.cs",
   "PreviewInSolutionExplorer": false
 }
