@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DATA Center\\Desktop\\Lab1\\Lab1\\Lab1.csproj": {}
+    "C:\\Users\\DATA Center\\Desktop\\Lab1Commit\\LabCourse1\\Lab1\\Lab1\\Lab1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DATA Center\\Desktop\\Lab1\\Lab1\\Lab1.csproj": {
+    "C:\\Users\\DATA Center\\Desktop\\Lab1Commit\\LabCourse1\\Lab1\\Lab1\\Lab1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DATA Center\\Desktop\\Lab1\\Lab1\\Lab1.csproj",
+        "projectUniqueName": "C:\\Users\\DATA Center\\Desktop\\Lab1Commit\\LabCourse1\\Lab1\\Lab1\\Lab1.csproj",
         "projectName": "Lab1",
-        "projectPath": "C:\\Users\\DATA Center\\Desktop\\Lab1\\Lab1\\Lab1.csproj",
+        "projectPath": "C:\\Users\\DATA Center\\Desktop\\Lab1Commit\\LabCourse1\\Lab1\\Lab1\\Lab1.csproj",
         "packagesPath": "C:\\Users\\DATA Center\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DATA Center\\Desktop\\Lab1\\Lab1\\obj\\",
+        "outputPath": "C:\\Users\\DATA Center\\Desktop\\Lab1Commit\\LabCourse1\\Lab1\\Lab1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DATA Center\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
