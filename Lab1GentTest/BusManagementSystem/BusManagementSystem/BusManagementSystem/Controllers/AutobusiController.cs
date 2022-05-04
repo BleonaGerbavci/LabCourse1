@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿#nullable disable
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using BusManagementSystem.Data;
 using BusManagementSystem.Models;
+
 
 namespace BusManagementSystem.Controllers
 {
@@ -22,7 +18,7 @@ namespace BusManagementSystem.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet("GetAutobusat")]
         public async Task<ActionResult<List<Autobusi>>> Get()
         {
             return Ok(await _context.Autobusi.ToListAsync());
@@ -42,8 +38,8 @@ namespace BusManagementSystem.Controllers
 
 
         //Create a Bus 
-        [HttpPost]
-        public async Task<ActionResult<List<Autobusi>>> AddAutobusi(Autobusi autobusi)
+        [HttpPost("ShtoAutobusa")]
+        public async Task<ActionResult<List<Autobusi>>> ShtoAutobusa(Autobusi autobusi)
         {
             _context.Autobusi.Add(autobusi);
             await _context.SaveChangesAsync();
@@ -52,7 +48,7 @@ namespace BusManagementSystem.Controllers
         }
 
         //Update Bus
-        [HttpPut]
+        [HttpPut("UpdateAutobusa")]
         public async Task<ActionResult<Autobusi>> UpdateAutobusi(Autobusi request)
         {
             var dbautobusi = await _context.Autobusi.FindAsync(request.Id);
@@ -74,7 +70,7 @@ namespace BusManagementSystem.Controllers
         }
  
         //Delete a Bus
-        [HttpDelete]
+        [HttpDelete("FshijeAutobusa")]
         public async Task<ActionResult<List<Autobusi>>> DeleteAutobusi(int id)
         {
             var dbautobusi = await _context.Autobusi.FindAsync(id);

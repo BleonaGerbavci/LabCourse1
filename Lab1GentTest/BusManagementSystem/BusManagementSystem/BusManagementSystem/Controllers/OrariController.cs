@@ -25,7 +25,7 @@ namespace BusManagementSystem.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet ("GetOraret")]
         public async Task<ActionResult<List<Orari>>> Get()
         {
             return Ok(await _context.Orari.ToListAsync());
@@ -45,8 +45,8 @@ namespace BusManagementSystem.Controllers
 
 
         //Create Orari
-        [HttpPost]
-        public async Task<ActionResult<List<Orari>>> AddKompania(Orari orari)
+        [HttpPost ("ShtoOrarin")]
+        public async Task<ActionResult<List<Orari>>> AddOrari(Orari orari)
         {
             _context.Orari.Add(orari);
             await _context.SaveChangesAsync();
@@ -55,16 +55,19 @@ namespace BusManagementSystem.Controllers
         }
 
         //Update a Orari
-        [HttpPut]
-        public async Task<ActionResult<Orari>> UpdateKompania(Orari request)
+        [HttpPut("UpdateOrarin")]
+        public async Task<ActionResult<Orari>> UpdateOrarin(Orari request)
         {
             var dborari = await _context.Orari.FindAsync(request.Id);
             if (dborari == null)
                 return BadRequest("Orari not found");
 
+            if(!request.WeekDay.Equals(""))
             dborari.WeekDay = request.WeekDay;
+            if(!request.StartingHour.Equals(""))
             dborari.StartingHour = request.StartingHour;
-            dborari.EndingHour = request.EndingHour;
+            if(!request.EndingHour.Equals(""))
+            dborari.EndingHour= request.EndingHour;
          
             await _context.SaveChangesAsync();
 
@@ -72,8 +75,8 @@ namespace BusManagementSystem.Controllers
         }
 
         //Delete Orari
-        [HttpDelete]
-        public async Task<ActionResult<List<Orari>>> DeleteKompania(int id)
+        [HttpDelete ("FshijeOrarin")]
+        public async Task<ActionResult<List<Orari>>> DeleteOrari(int id)
         {
             var dborari = await _context.Orari.FindAsync(id);
             if (dborari == null)

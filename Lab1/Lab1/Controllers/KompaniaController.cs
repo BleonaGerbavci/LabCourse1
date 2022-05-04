@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿#nullable disable
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Lab1.Data;
 using Lab1.Models;
 
@@ -24,7 +19,7 @@ namespace Lab1.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet("GetKompanite")]
         public async Task<ActionResult<List<Kompania>>> Get()
         {
             return Ok(await _context.Kompania.ToListAsync());
@@ -38,14 +33,14 @@ namespace Lab1.Controllers
         {
             var kompania = await _context.Kompania.FindAsync(id);
             if (kompania == null)
-                return BadRequest("Kompania not found.");
+                return BadRequest("Kompania nuk u gjet.");
             return Ok(kompania);
         }
 
 
         //Create a Company 
-        [HttpPost]
-        public async Task<ActionResult<List<Kompania>>> AddKompania(Kompania kompania)
+        [HttpPost("ShtoKompani")]
+        public async Task<ActionResult<List<Kompania>>> ShtoKompani(Kompania kompania)
         {
             _context.Kompania.Add(kompania);
             await _context.SaveChangesAsync();
@@ -54,17 +49,22 @@ namespace Lab1.Controllers
         }
 
         //Update a Company
-        [HttpPut]
-        public async Task<ActionResult<Kompania>> UpdateKompania(Kompania request)
+        [HttpPut("UpdateKompanine")]
+        public async Task<ActionResult<Kompania>> UpdateKompanine(Kompania request)
         {
             var dbkompania = await _context.Kompania.FindAsync(request.Id);
             if (dbkompania == null)
-                return BadRequest("Kompania not found");
+                return BadRequest("Kompania nuk u gjet.");
 
+            if(!request.Name.Equals(""))
             dbkompania.Name = request.Name;
+            if(!request.Adress.Equals(""))
             dbkompania.Adress = request.Adress;
+            if(!request.City.Equals(""))
             dbkompania.City = request.City;
+            if(!request.Email.Equals(""))
             dbkompania.Email = request.Email;
+            if(!request.ContactNumber.Equals(""))
             dbkompania.ContactNumber = request.ContactNumber;
 
             await _context.SaveChangesAsync();
@@ -73,8 +73,8 @@ namespace Lab1.Controllers
         }
 
         //Delete a Company
-        [HttpDelete]
-        public async Task<ActionResult<List<Kompania>>> DeleteKompania(int id)
+        [HttpDelete("FshijKompanine")]
+        public async Task<ActionResult<List<Kompania>>> FshijKompanine(int id)
         {
             var dbkompania = await _context.Kompania.FindAsync(id);
             if (dbkompania == null)
