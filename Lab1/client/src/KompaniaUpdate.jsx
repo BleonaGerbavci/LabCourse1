@@ -43,6 +43,11 @@ export default function KompaniaUpdate() {
 
     return (
         <form onSubmit={handleEdit} >
+                <h4 className="d-flex justify-content m-3">
+                Perditeso Kompanine
+                </h4>
+               <br />
+               <br />
                  <TextField
                 required
                 id="filled-required"

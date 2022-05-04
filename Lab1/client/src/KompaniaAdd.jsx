@@ -37,6 +37,11 @@ export default function KompaniaAdd(){
         <form onSubmit={handleAdd}>
             <br />
             <br />
+                   <h4 className="d-flex justify-content m-3">
+                   Shto Kompani
+                   </h4>
+            <br />
+            <br />
                         <TextField
                                 required
                                 id="filled-required"
