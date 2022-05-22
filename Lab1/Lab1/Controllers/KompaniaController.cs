@@ -54,7 +54,7 @@ namespace Lab1.Controllers
         {
             var dbkompania = await _context.Kompania.FindAsync(request.Id);
             if (dbkompania == null)
-                return BadRequest("Kompania nuk u gjet.");
+                return BadRequest("Kompania nuk u gjet."); 
 
             if(!request.Name.Equals(""))
             dbkompania.Name = request.Name;

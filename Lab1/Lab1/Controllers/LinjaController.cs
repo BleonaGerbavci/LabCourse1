@@ -55,13 +55,13 @@ namespace Lab1.Controllers
             if (dblinja == null)
                 return BadRequest("Linja nuk u gjet.");
 
-            if (!request.PickupLocation.Equals(""))
+            if (request.PickupLocation == null || !request.PickupLocation.Equals("") )
                 dblinja.PickupLocation = request.PickupLocation;
-            if (!request.DestinationLocaion.Equals(""))
+            if (request.DestinationLocaion == null || !request.DestinationLocaion.Equals(""))
                 dblinja.DestinationLocaion = request.DestinationLocaion;
-            if (!request.Price.Equals(""))
+            if (request.Price > 0)
                 dblinja.Price = request.Price;
-            if (!request.Duration.Equals(""))
+            if (request.Duration == null ||!request.Duration.Equals(""))
                 dblinja.Duration = request.Duration;
           
             await _context.SaveChangesAsync();
