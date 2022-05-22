@@ -4,6 +4,9 @@ import OrariAdd from './OrariAdd';
 import Autobusi from './Autobusi/Autobusi';
 import AutobusiUpdate from './Autobusi/AutobusiUpdate';
 import AutobusiAdd from './Autobusi/AutobusiAdd';
+import Klienti from './Klienti/Klienti';
+import KlientiUpdate from './Klienti/KlientiUpdate';
+import KlientiAdd from './Klienti/KlientiAdd';
 
 import {BrowserRouter, Route, Switch,NavLink, Routes} from 'react-router-dom';
 
@@ -29,6 +32,11 @@ function App() {
             <NavLink className="btn btn-light btn-outline-primary" to="/Autobusi">
       Autobusi
             </NavLink>
+            &nbsp; 
+            &nbsp; 
+            <NavLink className="btn btn-light btn-outline-primary" to="/Klienti">
+      Klienti
+            </NavLink>
           </li>
 
         </ul>
@@ -41,6 +49,11 @@ function App() {
      <Route path='/Autobusi' element={<Autobusi />}/>
      <Route path='/AutobusiUpdate' element={<AutobusiUpdate />}/>
      <Route path='/AutobusiAdd' element={<AutobusiAdd />}/>
+
+     <Route path='/Klienti' element={<Klienti />}/>
+     <Route path='/KlientiUpdate' element={<KlientiUpdate />}/>
+     <Route path='/KlientiAdd' element={<KlientiAdd />}/>
+
 
       </Routes>
     </div>

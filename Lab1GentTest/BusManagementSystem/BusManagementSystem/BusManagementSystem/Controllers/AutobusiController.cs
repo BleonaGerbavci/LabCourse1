@@ -39,7 +39,7 @@ namespace BusManagementSystem.Controllers
 
         //Create a Bus 
         [HttpPost("ShtoAutobusa")]
-        public async Task<ActionResult<List<Autobusi>>> ShtoAutobusa(Autobusi autobusi)
+        public async Task<ActionResult<List<Autobusi>>> AddAutobusi(Autobusi autobusi)
         {
             _context.Autobusi.Add(autobusi);
             await _context.SaveChangesAsync();
@@ -54,13 +54,19 @@ namespace BusManagementSystem.Controllers
             var dbautobusi = await _context.Autobusi.FindAsync(request.Id);
             if (dbautobusi == null)
                 return BadRequest("autobusi not found");
-     
-            dbautobusi.Number = request.Number;
-            dbautobusi.Capacity = request.Capacity;
-            dbautobusi.FuelCapacity = request.FuelCapacity;
-            dbautobusi.GarazhaId = request.GarazhaId;
-            dbautobusi.KompaniaId = request.KompaniaId;
-            dbautobusi.PompaId = request.PompaId;
+
+               if(!request.Number.Equals(""))
+                dbautobusi.Number = request.Number;
+             if (!request.Capacity.Equals(""))
+                dbautobusi.Capacity = request.Capacity;
+            if (!request.FuelCapacity.Equals(""))
+                dbautobusi.FuelCapacity = request.FuelCapacity;
+            if (!request.GarazhaId.Equals(""))
+                dbautobusi.GarazhaId = request.GarazhaId;
+            if (!request.KompaniaId.Equals(""))
+                dbautobusi.KompaniaId = request.KompaniaId;
+            if (!request.PompaId.Equals(""))
+                dbautobusi.PompaId = request.PompaId;
 
 
 
@@ -70,7 +76,7 @@ namespace BusManagementSystem.Controllers
         }
  
         //Delete a Bus
-        [HttpDelete("FshijeAutobusa")]
+        [HttpDelete("FshijeAutobusin")]
         public async Task<ActionResult<List<Autobusi>>> DeleteAutobusi(int id)
         {
             var dbautobusi = await _context.Autobusi.FindAsync(id);
