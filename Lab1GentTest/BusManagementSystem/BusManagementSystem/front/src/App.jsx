@@ -8,6 +8,10 @@ import Klienti from './Klienti/Klienti';
 import KlientiUpdate from './Klienti/KlientiUpdate';
 import KlientiAdd from './Klienti/KlientiAdd';
 
+import Rent from './Rent/Rent';
+import UpdateRent from './Rent/UpdateRent';
+import RentAdd from './Rent/RentAdd';
+
 import {BrowserRouter, Route, Switch,NavLink, Routes} from 'react-router-dom';
 
 
@@ -37,6 +41,11 @@ function App() {
             <NavLink className="btn btn-light btn-outline-primary" to="/Klienti">
       Klienti
             </NavLink>
+            &nbsp; 
+            &nbsp; 
+            <NavLink className="btn btn-light btn-outline-primary" to="/Rent">
+      Rent
+            </NavLink>
           </li>
 
         </ul>
@@ -53,6 +62,10 @@ function App() {
      <Route path='/Klienti' element={<Klienti />}/>
      <Route path='/KlientiUpdate' element={<KlientiUpdate />}/>
      <Route path='/KlientiAdd' element={<KlientiAdd />}/>
+
+     <Route path='/Rent' element={<Rent/>}/>
+     <Route path='/UpdateRent' element={<UpdateRent />}/>
+     <Route path='/RentAdd' element={<RentAdd />}/>
 
 
       </Routes>
