@@ -22,7 +22,7 @@ namespace Lab1Rina.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet("GetGarazha")]
         public async Task<ActionResult<List<Garazha>>> Get()
         {
             return Ok(await _context.Garazha.ToListAsync());
@@ -41,8 +41,8 @@ namespace Lab1Rina.Controllers
         }
 
 
-        //Create a Garages 
-        [HttpPost]
+        //Create  Garage 
+        [HttpPost("ShtoGarazha")]
         public async Task<ActionResult<List<Garazha>>> AddGarazha(Garazha garazha)
         {
             _context.Garazha.Add(garazha);
@@ -52,7 +52,7 @@ namespace Lab1Rina.Controllers
         }
 
         //Update Garages
-        [HttpPut]
+        [HttpPut("UpdateGarazha")]
         public async Task<ActionResult<Garazha>> UpdateGarazha(Garazha request)
         {
             var dbgarazha = await _context.Garazha.FindAsync(request.Id);
@@ -70,8 +70,8 @@ namespace Lab1Rina.Controllers
             return Ok(await _context.Garazha.ToListAsync());
         }
 
-        //Delete a Garages
-        [HttpDelete]
+        //Delete a Garage
+        [HttpDelete("DeleteGarazha")]
         public async Task<ActionResult<List<Garazha>>> DeleteGarazha(int id)
         {
             var dbgarazha = await _context.Garazha.FindAsync(id);

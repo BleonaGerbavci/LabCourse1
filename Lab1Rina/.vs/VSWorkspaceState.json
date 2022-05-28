@@ -1,12 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Lab1Rina",
-    "\\Lab1Rina\\bin",
-    "\\Lab1Rina\\client1",
-    "\\Lab1Rina\\Controllers",
-    "\\Lab1Rina\\Data"
+    "\\bin",
+    "\\bin\\Release\\net6.0"
   ],
-  "SelectedNode": "\\Lab1Rina\\Controllers\\PompaController.cs",
   "PreviewInSolutionExplorer": false
 }
