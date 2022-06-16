@@ -1,4 +1,4 @@
-
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Lab1.Data;
 using Lab1.Models;
@@ -17,7 +17,7 @@ namespace Lab1.Controllers
         }
 
 
-        [HttpGet ("GetPompa")]
+        [HttpGet("GetPompa")]
         public async Task<ActionResult<List<Pompa>>> Get()
         {
             return Ok(await _context.Pompa.ToListAsync());
@@ -26,10 +26,10 @@ namespace Lab1.Controllers
 
 
         //Get a single Pompe by id
-        [HttpGet("{id}")]
-        public async Task<ActionResult<List<Pompa>>> Get(int id)
+        [HttpGet("{PompaId}")]
+        public async Task<ActionResult<List<Pompa>>> Get(int PompaId)
         {
-            var pompa = await _context.Pompa.FindAsync(id);
+            var pompa = await _context.Pompa.FindAsync(PompaId);
             if (pompa == null)
                 return BadRequest("Pompa not found.");
             return Ok(pompa);
@@ -37,7 +37,7 @@ namespace Lab1.Controllers
 
 
         //Create a Pompa
-        [HttpPost ("ShtoPompa")]
+        [HttpPost("ShtoPompa")]
         public async Task<ActionResult<List<Pompa>>> AddPompa(Pompa pompa)
         {
             _context.Pompa.Add(pompa);
@@ -50,17 +50,18 @@ namespace Lab1.Controllers
         [HttpPut("UpdatePompa")]
         public async Task<ActionResult<Pompa>> UpdatePompa(Pompa request)
         {
-            var dbpompa = await _context.Pompa.FindAsync(request.Id);
+            var dbpompa = await _context.Pompa.FindAsync(request.PompaId);
             if (dbpompa == null)
-                return BadRequest("pompa not found");
+                return BadRequest("pompa nuk u gjet");
 
-            if(request.Name == null ||!request.Name.Equals(""))
-            dbpompa.Name = request.Name;
+            if (request.Emri == null || !request.Emri.Equals(""))
+                dbpompa.Emri = request.Emri;
 
-            if(request.Adress == null ||!request.Adress.Equals(""))
-            dbpompa.Adress = request.Adress;
+            if (request.EmriRruges == null || !request.EmriRruges.Equals(""))
+                dbpompa.EmriRruges = request.EmriRruges;
 
-
+            if (!(request.ZipCode <= 0))
+                dbpompa.ZipCode = request.ZipCode;
 
 
             await _context.SaveChangesAsync();
@@ -70,9 +71,9 @@ namespace Lab1.Controllers
 
         //Delete a Pompa
         [HttpDelete("DeletePompa")]
-        public async Task<ActionResult<List<Pompa>>> DeletePompa(int id)
+        public async Task<ActionResult<List<Pompa>>> DeletePompa(int PompaId)
         {
-            var dbpompa = await _context.Pompa.FindAsync(id);
+            var dbpompa = await _context.Pompa.FindAsync(PompaId);
             if (dbpompa == null)
                 return BadRequest("Pompa not found");
 

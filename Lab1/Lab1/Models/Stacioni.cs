@@ -3,19 +3,17 @@ using System.Collections.Generic;
 
 namespace Lab1.Models
 {
-    public partial class Garazha
+    public partial class Stacioni
     {
-        public Garazha()
+        public Stacioni()
         {
             Autobusi = new HashSet<Autobusi>();
         }
 
-        public int GarazhaId { get; set; }
+        public int StacioniId { get; set; }
         public string? EmriRruges { get; set; }
         public int? ZipCode { get; set; }
-        public int? KompaniaId { get; set; }
 
-        public virtual Kompania? Kompania { get; set; }
         public virtual Qyteti? ZipCodeNavigation { get; set; }
         public virtual ICollection<Autobusi> Autobusi { get; set; }
     }

@@ -7,13 +7,15 @@ namespace Lab1.Models
     {
         public Pompa()
         {
-            Autobusi = new HashSet<Autobusi>();
+            Kompania = new HashSet<Kompania>();
         }
 
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Adress { get; set; }
+        public int PompaId { get; set; }
+        public string? Emri { get; set; }
+        public string? EmriRruges { get; set; }
+        public int? ZipCode { get; set; }
 
-        public virtual ICollection<Autobusi> Autobusi { get; set; }
+        public virtual Qyteti? ZipCodeNavigation { get; set; }
+        public virtual ICollection<Kompania> Kompania { get; set; }
     }
 }
