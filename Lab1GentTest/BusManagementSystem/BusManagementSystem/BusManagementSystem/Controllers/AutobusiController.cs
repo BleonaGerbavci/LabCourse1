@@ -1,5 +1,4 @@
-﻿#nullable disable
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using BusManagementSystem.Data;
 using BusManagementSystem.Models;
 
@@ -51,22 +50,20 @@ namespace BusManagementSystem.Controllers
         [HttpPut("UpdateAutobusa")]
         public async Task<ActionResult<Autobusi>> UpdateAutobusi(Autobusi request)
         {
-            var dbautobusi = await _context.Autobusi.FindAsync(request.Id);
+            var dbautobusi = await _context.Autobusi.FindAsync(request.AutobusiId);
             if (dbautobusi == null)
                 return BadRequest("autobusi not found");
 
-               if(!request.Number.Equals(""))
-                dbautobusi.Number = request.Number;
-             if (!request.Capacity.Equals(""))
-                dbautobusi.Capacity = request.Capacity;
+            if (!request.NrUleseve.Equals(""))
+                dbautobusi.NrUleseve= request.NrUleseve;
             if (!request.FuelCapacity.Equals(""))
                 dbautobusi.FuelCapacity = request.FuelCapacity;
             if (!request.GarazhaId.Equals(""))
                 dbautobusi.GarazhaId = request.GarazhaId;
             if (!request.KompaniaId.Equals(""))
                 dbautobusi.KompaniaId = request.KompaniaId;
-            if (!request.PompaId.Equals(""))
-                dbautobusi.PompaId = request.PompaId;
+            if (!request.StacioniId.Equals(""))
+                dbautobusi.StacioniId = request.StacioniId;
 
 
 
@@ -74,12 +71,12 @@ namespace BusManagementSystem.Controllers
 
             return Ok(await _context.Autobusi.ToListAsync());
         }
- 
+
         //Delete a Bus
         [HttpDelete("FshijeAutobusin")]
-        public async Task<ActionResult<List<Autobusi>>> DeleteAutobusi(int id)
+        public async Task<ActionResult<List<Autobusi>>> DeleteAutobusi(int autobusiId)
         {
-            var dbautobusi = await _context.Autobusi.FindAsync(id);
+            var dbautobusi = await _context.Autobusi.FindAsync(autobusiId);
             if (dbautobusi == null)
                 return BadRequest("Autobusi not found");
 
@@ -90,4 +87,3 @@ namespace BusManagementSystem.Controllers
         }
     }
 }
-   
