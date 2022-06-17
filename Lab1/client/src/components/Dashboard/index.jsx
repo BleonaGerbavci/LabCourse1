@@ -17,6 +17,14 @@ import Pompa from '../cruds/pompa-crud/Pompa';
 import PompaCrud from '../cruds/pompa-crud/pompa-crud';
 import PompaAdd from '../cruds/pompa-crud/PompaAdd';
 import PompaUpdate from '../cruds/pompa-crud/PompaUpdate';
+import StacioniCrud from '../cruds/stacioni-crud/stacioni-crud';
+import Stacioni from '../cruds/stacioni-crud/Stacioni';
+import StacioniAdd from '../cruds/stacioni-crud/StacioniAdd';
+import StacioniUpdate from '../cruds/stacioni-crud/StacioniUpdate';
+import Qyteti from '../cruds/qyteti-crud/Qyteti';
+import QytetiCrud from '../cruds/qyteti-crud/qyteti-crud';
+import QytetiAdd from '../cruds/qyteti-crud/QytetiAdd';
+import QytetiUpdate from '../cruds/qyteti-crud/QytetiUpdate';
 
 
 export default function Dashboard(){
@@ -47,7 +55,16 @@ export default function Dashboard(){
               Pompa
             </NavLink>
           </li>
-        
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-outline-secondary" to="./stacioni">
+              Stacioni
+            </NavLink>
+          </li>
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-outline-secondary" to="./qyteti">
+             Qyteti
+            </NavLink>
+          </li>
         </ul>
       </nav>
 
@@ -69,6 +86,16 @@ export default function Dashboard(){
             <Route path='/pompaUpdate' element={<PompaUpdate />}/>
             <Route path='/pompaAdd' element={<PompaAdd />}/>
             <Route path='/PompaCrud' element={<PompaCrud />}/>
+            <Route path='/StacioniCrud' element={<StacioniCrud />} />
+            <Route path='/stacioni' element={<Stacioni />} />
+            <Route path='/stacioniAdd' element={<StacioniAdd />} />
+            <Route path='/stacioniUpdate' element={<StacioniUpdate />} />
+            <Route path='/QytetiCrud' element={<QytetiCrud />} />
+            <Route path='/qyteti' element={<Qyteti />} />
+            <Route path='/qytetiAdd' element={<QytetiAdd />} />
+            <Route path='/qytetiUpdate' element={<QytetiUpdate />} />
+            
+            
 
         </Routes>
        

@@ -20,28 +20,28 @@ export default function KompaniaUpdate() {
             })
     }, [refreshKey])
 
-    const [id, setId] = useState('');
-    const [name, setName] = useState('');
-    const [adress, setAdress] = useState('');
-    const [city, setCity] = useState('');
-    const [email, setEmail] = useState('');
-    const [contactNumber, setContactNumber] = useState('');
+    const [kompaniaId, setKompaniaId] = useState('');
+    const [emri, setEmri] = useState('');
+    const [emaili, setEmaili] = useState('');
+    const [nrTelefonit, setNrTelefonit] = useState('');
+    const [nrAdreses, setNrAdreses] = useState('');
+    const [emriRruges, setEmriRruges] = useState('');
+    const [zipCode, setZipCode] = useState('');
+    const [pompaId, setPompaId] = useState('');
 
     
         const handleEdit = (e) => {
             e.preventDefault();
-            const kompaniaa = { id, name, adress, city, email, contactNumber };
+            const kompaniaa = { kompaniaId, emri, emaili, nrTelefonit, nrAdreses, emriRruges,zipCode,pompaId };
             kompania.map((kompania) => {
-                if (id == kompania.id) {
+                if (kompaniaId == kompania.kompaniaId) {
                         axios.put('https://localhost:7138/api/Kompania/UpdateKompanine', kompaniaa)
                         .then(() => {
                             window.alert('Kompania u perditesua me sukses!');
                             navigate('../kompania');
-                        })
-                           
-                  
+                        }) 
                 }
-            })
+            }) 
             
         }
     
@@ -53,45 +53,57 @@ export default function KompaniaUpdate() {
                 </h4>
                <br />
                <br />
-                 <TextField
-                required
-                id="filled-required"
-                label="Id"
-                value={id}
-                onChange={(e) => setId(e.target.value)}
-                 />
-                <TextField
-                required
-                id="filled-required"
-                label="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                />
-                <TextField
-                id="filled-number"
-                label="Adress"
-                value={adress}
-                onChange={(e) => setAdress(e.target.value)}
-                />
-                <TextField
-                id="filled"
-                label="City"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                />
-                <TextField
-                id="filled"
-                label="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                />
-                <TextField
-                id="filled"
-                label="Numri Kontaktues"
-                type="number"
-                value={contactNumber}
-                onChange={(e) => setContactNumber(e.target.value)}
-                />
+                        <TextField
+                        required
+                        id="filled-required"
+                        label="Id"
+                        value={kompaniaId}
+                        onChange={(e) => setKompaniaId(e.target.value)}
+                         />
+                        <TextField
+                            required
+                            id="filled-required"
+                            label="Emri"
+                            value={emri}
+                            onChange={(e) => setEmri(e.target.value)}
+                        /> 
+                        <TextField
+                            id="filled-number"
+                            label="Email"
+                            value={emaili}
+                            onChange={(e) => setEmaili(e.target.value)}
+                        /> 
+                        <TextField
+                            id="filled"
+                            label="Numri kontaktues"
+                            type="number"
+                            value={nrTelefonit}
+                            onChange={(e) => setNrTelefonit(e.target.value)}
+                        /> 
+                        <TextField
+                            id="filled"
+                            label="Numri i adreses"
+                            value={nrAdreses}
+                            onChange={(e) => setNrAdreses(e.target.value)}
+                        /> 
+                         <TextField
+                            id="filled"
+                            label="Rruga"
+                            value={emriRruges}
+                            onChange={(e) => setEmriRruges(e.target.value)}
+                        /> 
+                         <TextField
+                            id="filled"
+                            label="Zip Kodi"
+                            value={zipCode}
+                            onChange={(e) => setZipCode(e.target.value)}
+                        /> 
+                         <TextField
+                            id="filled"
+                            label="Pompa Id"
+                            value={pompaId}
+                            onChange={(e) => setPompaId(e.target.value)}
+                        />  
              <br /><br /><br />
                            
             <button type="submit" className="btn btn-outline-secondary">

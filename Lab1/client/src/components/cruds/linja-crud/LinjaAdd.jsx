@@ -9,15 +9,19 @@ export default function LinjaAdd(){
     
     const navigate = useNavigate();
      //Set data to database
-     
-     const [pickupLocation, setPickupLocation] = useState('');
-     const [destinationLocaion, setDestinationLocaion] = useState('');
-     const [price, setPrice] = useState(0);
-     const [duration, setDuration] = useState('');
+     const [vendiINisjes, setVendiINisjes] = useState('');
+     const [destinacioni, setDestinacioni] = useState('');
+     const [cmimi, setCmimi] = useState(0);
+     const [kohaNisjes, setKohaNisjes] = useState('');
+     const [kohaMberritjes, setKohaMberritjes] = useState('');
+     const [kohezgjatja, setKohezgjatja] = useState('');
+     const [autobusiId, setAutobusiId] = useState('');
+     const [kompaniaId, setKompaniaId] = useState('');
+
  
      const handleAdd = (e) => {
          e.preventDefault();
-         const linja = { pickupLocation, destinationLocaion,price, duration };
+         const linja = { vendiINisjes, destinacioni, cmimi, kohaNisjes,kohaMberritjes,kohezgjatja, autobusiId,kompaniaId };
  
          axios.post('https://localhost:7138/api/Linja/ShtoLinje', linja)
              .then(() => {
@@ -46,28 +50,52 @@ export default function LinjaAdd(){
                 required
                 id="filled-required"
                 label="Vendi i nisjes"
-                value={pickupLocation}
-                onChange={(e) => setPickupLocation(e.target.value)}
+                value={vendiINisjes}
+                onChange={(e) => setVendiINisjes(e.target.value)}
                 />
                 <TextField
                 id="filled"
                 label="Destinacioni"
-                value={destinationLocaion}
-                onChange={(e) => setDestinationLocaion(e.target.value)}
+                value={destinacioni}
+                onChange={(e) => setDestinacioni(e.target.value)}
                 />
                 <TextField
                 id="filled"
                 label="Cmimi"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
+                value={cmimi}
+                onChange={(e) => setCmimi(e.target.value)}
+                />
+     
+                <TextField
+                id="filled"
+                label="Koha e nisjes"
+                value={kohaNisjes}
+                onChange={(e) => setKohaNisjes(e.target.value)}
+                /> 
+                <TextField
+                id="filled"
+                label="Koha e mberritjes"
+                value={kohaMberritjes}
+                onChange={(e) => setKohaMberritjes(e.target.value)}
                 />
                 <TextField
                 id="filled"
-                label="Koha e nisjes & mberritjes"
-                value={duration}
-                onChange={(e) => setDuration(e.target.value)}
+                label="Kohezgjatja"
+                value={kohezgjatja}
+                onChange={(e) => setKohezgjatja(e.target.value)}
                 />
-                
+                <TextField
+                id="filled"
+                label="Autobusi Id"
+                value={autobusiId}
+                onChange={(e) => setAutobusiId(e.target.value)}
+                />
+                <TextField
+                id="filled"
+                label="Kompania Id"
+                value={kompaniaId}
+                onChange={(e) => setKompaniaId(e.target.value)}
+                />
              <br /><br /><br />
                            
              <button type="submit" className="btn btn-outline-secondary">

@@ -1,21 +1,21 @@
 import React,{ useState, useEffect } from 'react';
 import axios from 'axios';
-import handleEdit from './KompaniaUpdate';
+import handleEdit from './StacioniUpdate';
 import { Link } from 'react-router-dom';
 
 
 
-export default function Kompania() {
+export default function Stacioni() {
 
-    const[kompanite, setKompanite] = useState([]);
+    const[stacionet, setStacionet] = useState([]);
 
     const [refreshKey, setRefreshKey] = useState('0');
     
     //get data from database
     useEffect(() => { 
-        axios.get('https://localhost:7138/api/Kompania/GetKompanite')
+        axios.get('https://localhost:7138/api/Stacioni/GetStacionet')
             .then(response => {
-                setKompanite(response.data);
+                setStacionet(response.data);
             })
     }, [refreshKey])
 
@@ -23,18 +23,18 @@ export default function Kompania() {
 
 
      //Delete data in database    
-     function deleteKompania(kompaniaId) {
+     function deleteStacioni(stacioniId) {
         const confirmBox = window.confirm(
-            "A jeni te sigurte qe deshironi te fshini kompanine me id " + kompaniaId  +"?  " 
+            "A jeni te sigurte qe deshironi te fshini stacionin me id " + stacioniId  +"?  " 
         )
         if (confirmBox === true) {
-            axios.delete('https://localhost:7138/api/Kompania/FshijKompanine?kompaniaId=' + kompaniaId)
+            axios.delete('https://localhost:7138/api/Stacioni/FshijStacion?stacioniId=' + stacioniId)
                 .then(() => {
                     setRefreshKey(refreshKey => refreshKey + 1)
                 })
         }
         else {
-            console.log("Process of deleting a company canceled !!");
+            console.log("Process of deleting a stacion canceled !!");
         }
     }
 
@@ -43,10 +43,10 @@ export default function Kompania() {
         return(
             <div>
                 <br /><br />
-                <Link to="../kompaniaAdd">
+                <Link to="../stacioniAdd">
                 <button  type="button " 
                  className="btn btn-outline-secondary">
-                Shto Kompanineㅤ
+                Shto Stacionin
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -61,30 +61,22 @@ export default function Kompania() {
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Emri</th>
-                            <th>Email</th>
-                            <th>Numri kontaktues</th>
-                            <th>Numri i adreses</th>
-                            <th>Rruga</th>
-                            <th>ZipCode</th>
-                            <th>Pompa </th>
+                            <th>Emri i rruges</th>
+                            <th>Zip Kodi</th>
                             <th>Opsionet</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {kompanite.map(kompania=>(
-                           <tr key={kompania.kompaniaId}>
-                               <td>{kompania.kompaniaId}</td>
-                               <td>{kompania.emri}</td>
-                               <td>{kompania.emaili}</td>
-                               <td>{kompania.nrTelefonit}</td>
-                               <td>{kompania.nrAdreses}</td>
-                               <td>{kompania.emriRruges}</td>
-                               <td>{kompania.zipCode}</td>
-                               <td>{kompania.pompaId}</td>
+                        {stacionet.map(stacioni=>(
+                           <tr key={stacioni.stacioniId}>
+                               <td>{stacioni.stacioniId}</td>
+                               <td>{stacioni.emriRruges}</td>
+                               <td>{stacioni.zipCode}</td>
+                              
+                            
                                <td>
                                   
-                               <Link to="../KompaniaUpdate">
+                               <Link to="../StacioniUpdate">
                                    <button type="button"   onClick={handleEdit}
                                    className="btn btn-light mr-1">
                                     <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -94,7 +86,7 @@ export default function Kompania() {
                                    </button> 
                                 </Link>
                                   
-                                   <button type="button" onClick={() => deleteKompania(kompania.kompaniaId)}
+                                   <button type="button" onClick={() => deleteStacioni(stacioni.stacioniId)}
                                    className="btn btn-light mr-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -106,10 +98,7 @@ export default function Kompania() {
                            </tr>
                         ))}
                     </tbody>
-                </table>
-                
-                    
-                                
+                </table>                  
             </div>
     )
     

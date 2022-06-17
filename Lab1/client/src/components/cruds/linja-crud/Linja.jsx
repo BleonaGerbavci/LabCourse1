@@ -26,7 +26,7 @@ export default function Linja(){
             "A jeni te sigurte qe deshironi te fshini linjen me id " + linjeId + '?  ' 
         )
         if (confirmBox === true) {
-            axios.delete('https://localhost:7138/api/Linja/FshijLinje?id=' + linjeId)
+            axios.delete('https://localhost:7138/api/Linja/FshijLinje?linjaId=' + linjeId)
                 .then(() => {
                     setRefreshKey(refreshKey => refreshKey + 1)
                 })
@@ -57,24 +57,33 @@ export default function Linja(){
                 <br />
                 <table className="table table-striped">
                     <thead>
-                        <tr>
+                        <tr> 
                             <th>Id</th>
                             <th>Vendi i nisjes</th>
                             <th>Destinacioni</th>
                             <th>Cmimi</th>
-                            <th>Koha e nisjes & mberritjes</th>
+                            <th>Koha e nisjes</th>
+                            <th>Koha e mberritjes</th>
+                            <th>Kohezgjatja</th>
+                            <th>Autobusi Id</th>
+                            <th>Kompania Id</th>
                             <th>Opsionet</th>
                             
                         </tr>
                     </thead>
                     <tbody>
                         {linja.map(linjaa=>(
-                           <tr key={linjaa.id}>
-                               <td>{linjaa.id}</td>
-                               <td>{linjaa.pickupLocation}</td>
-                               <td>{linjaa.destinationLocaion}</td>
-                               <td>{linjaa.price}€</td>
-                               <td>{linjaa.duration}</td>
+                           <tr key={linjaa.linjaId}>
+                               <td>{linjaa.linjaId}</td>
+                               <td>{linjaa.vendiInisjes}</td>
+                               <td>{linjaa.destinacioni}</td>
+                               <td>{linjaa.cmimi}€</td>
+                               <td>{linjaa.kohaNisjes}</td>
+                               <td>{linjaa.kohaMberritjes}</td>
+                               <td>{linjaa.kohezgjatja}</td>
+                               <td>{linjaa.autobusiId}</td>
+                               <td>{linjaa.kompaniaId}</td>
+
                              
                                <td>
                                   
@@ -88,7 +97,7 @@ export default function Linja(){
                                    </button> 
                                 </Link>
                                   
-                                   <button type="button" onClick={() => deleteLinja(linjaa.id)}
+                                   <button type="button" onClick={() => deleteLinja(linjaa.linjaId)}
                                    className="btn btn-light mr-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>

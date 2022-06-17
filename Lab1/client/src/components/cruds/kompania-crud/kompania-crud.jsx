@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter,  Route ,NavLink, Routes } from 'react-router-dom'
+import {Route ,NavLink, Routes } from 'react-router-dom'
 import Kompania from './Kompania';
 import KompaniaUpdate from './KompaniaUpdate';
 import KompaniaAdd from './KompaniaAdd';
@@ -7,8 +7,7 @@ import KompaniaAdd from './KompaniaAdd';
 export default function KompaniaCrud (){
   return (
     <div>
-        
-         <nav className="navbar navbar-expand-sm bg-light navbar-dark">
+        <nav className="navbar navbar-expand-sm bg-light navbar-dark">
         <ul className="navbar-nav">
         
           <li className="nav-item- m-1">
@@ -16,18 +15,15 @@ export default function KompaniaCrud (){
               Kompania
             </NavLink>
           </li>
-         
-        
+ 
         </ul>
-      </nav>
+        </nav>
       <Routes>
          
             <Route path='/kompania' element={<Kompania />}/>
             <Route path='/kompaniaUpdate' element={<KompaniaUpdate />}/>
             <Route path='/kompaniaAdd' element={<KompaniaAdd />}/>
       </Routes>
-       
-
     </div>
   )
 }
