@@ -4,6 +4,7 @@ import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, 
 from './NavbarElements';
 import Dashboard from '../Dashboard/index';
 import { Link } from 'react-router-dom';
+import Logo from '../../images/logo-white.svg'
 
 
 const Navbar = ({ toggle }) => {
@@ -11,7 +12,10 @@ const Navbar = ({ toggle }) => {
     <> 
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/">rezerGo</NavLogo>
+          <NavLogo to="/">
+          <img src={Logo} alt="logo" />
+
+          </NavLogo>
           <MobileIcon onClick={toggle} >
             <FaBars />
           </MobileIcon>

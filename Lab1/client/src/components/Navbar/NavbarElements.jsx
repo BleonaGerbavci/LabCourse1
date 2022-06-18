@@ -1,18 +1,20 @@
 import styled from 'styled-components'
 import {Link as LinkR} from 'react-router-dom'
-import { Link as LinkS } from 'react-scroll'
+
 
 export const Nav = styled.nav`
-    background: #000;
+    background: #252438;
     height: 80px;
+    border-radius:30px;
    // margin-top: -80px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
-    position: sticky;
+    position:relative;
     top: 0;
     z-index: 10;
+    height:89px;
 
     @media screen and (max-width: 960px){
         transition: 0.8s all ease;
@@ -30,18 +32,18 @@ export const NavbarContainer = styled.div`
 `
 
 export const NavLogo = styled(LinkR)`
-    color: #fff;
+    color: #ffffff;
     justify-self: flex-start;
     cursor: pointer;
     font-size: 1.5rem;
     display: flex;
     align-items: center;
-    margin-left: 24px;
+    margin-left: -50px;
     font-weight: bold;
     text-decoration: none;
 
     &:hover{
-        color: #01bf71;
+        color: #b81c1c;
         transition: 0.2s ease-in-out;
 
     }
@@ -81,20 +83,21 @@ export const NavItem = styled.li`
 `
 
 export const NavLinks = styled(LinkR)`
-    color: #fff;
+    color: #ffffff;
     display: flex;
     align-items: center;
     text-decoration: none;
     padding: 0 1rem;
-    height: 100%;
+    height: 120%;
     cursor: pointer;
+    font-weight:lighter;
 
     &.active{
-       border-bottom: 3px solid #01bf71;
+       border-bottom: 3px solid #ffffff;
 
     }
     &:hover{
-        color: #01bf71;
+        color: #b0b0cf;
         transition: 0.2s ease-in-out;
 
     }
@@ -111,21 +114,23 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(LinkR)`
     border-radius: 50px;
-    background: #01bf71;
+    background: rgba(252, 156, 9, 1);
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
+    color: #fff;
     font-size: 16px;
     outline: none;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
+    margin-right: -22px;
 
     &:hover{
         transition: all 0.2s ease-in-out;
-        background: #fff;
-        color: #010606;
+        background: #212131;
+        color: #fff;
+        border: 1px solid #ffa958;
         
     }
 

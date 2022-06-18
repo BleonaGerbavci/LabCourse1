@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import Video from '../../videos/video.mp4'
-import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1,HeroP, HeroBtnWrapper, ArrowForward, ArrowRight } from './HeroElements'
+import Image from '../../images/Home-Page.svg'
+import { HeroContainer, HeroBg, HeroContent, HeroH1, HeroBtnWrapper, ArrowForward, ArrowRight } from './HeroElements'
 import {Button} from '../ButtonElement'
+import "./hero.css";
 const HeroSection = () => {
 
 const [hover, setHover] =useState(false)
@@ -13,15 +14,13 @@ const onHover = () => {
   return (
     <HeroContainer>
         <HeroBg>
-            <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
+        
+        <img src={Image} alt="img" className='image' />
 
         </HeroBg>
         <HeroContent>
             <HeroH1>Shpejte dhe lehte, vec me udhtu t'ka mbete</HeroH1>
-            <HeroP>
-                Behu sot klient i RezerGo dhe perfito 10% 
-                zbritje ne rezervim te nje bilete.
-            </HeroP>
+            
             <HeroBtnWrapper>
                 <Button to="signup" onMouseEnter={onHover} onMouseLeave ={onHover}
                 primary="true"
