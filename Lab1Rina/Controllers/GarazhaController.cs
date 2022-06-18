@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using Lab1Rina.Data;
 using Lab1Rina.Models;
+
 
 namespace Lab1Rina.Controllers
 {
@@ -30,7 +25,7 @@ namespace Lab1Rina.Controllers
 
 
 
-        //Get a single Garages by id
+        //Get a single Bus by id
         [HttpGet("{id}")]
         public async Task<ActionResult<List<Garazha>>> Get(int id)
         {
@@ -41,7 +36,7 @@ namespace Lab1Rina.Controllers
         }
 
 
-        //Create  Garage 
+        //Create Garazha
         [HttpPost("ShtoGarazha")]
         public async Task<ActionResult<List<Garazha>>> AddGarazha(Garazha garazha)
         {
@@ -51,18 +46,21 @@ namespace Lab1Rina.Controllers
             return Ok(await _context.Garazha.ToListAsync());
         }
 
-        //Update Garages
+        //Update Garazha
         [HttpPut("UpdateGarazha")]
         public async Task<ActionResult<Garazha>> UpdateGarazha(Garazha request)
         {
-            var dbgarazha = await _context.Garazha.FindAsync(request.Id);
+            var dbgarazha = await _context.Garazha.FindAsync(request.GarazhaId);
             if (dbgarazha == null)
-                return BadRequest("garazha not found");
+                return BadRequest("Garazha not found");
 
-            dbgarazha.StreetName = request.StreetName;
-            dbgarazha.City = request.City;
-           
 
+            if (!request.EmriRruges.Equals(""))
+                dbgarazha.EmriRruges = request.EmriRruges;
+            if (!request.ZipCode.Equals(""))
+                dbgarazha.ZipCode = request.ZipCode;
+            if (!request.KompaniaId.Equals(""))
+                dbgarazha.KompaniaId = request.KompaniaId;
 
 
             await _context.SaveChangesAsync();
@@ -70,11 +68,11 @@ namespace Lab1Rina.Controllers
             return Ok(await _context.Garazha.ToListAsync());
         }
 
-        //Delete a Garage
-        [HttpDelete("DeleteGarazha")]
-        public async Task<ActionResult<List<Garazha>>> DeleteGarazha(int id)
+        //Delete a Bus
+        [HttpDelete("FshijGarazha")]
+        public async Task<ActionResult<List<Garazha>>> DeleteGarazha(int garazhaId)
         {
-            var dbgarazha = await _context.Garazha.FindAsync(id);
+            var dbgarazha = await _context.Garazha.FindAsync(garazhaId);
             if (dbgarazha == null)
                 return BadRequest("Garazha not found");
 

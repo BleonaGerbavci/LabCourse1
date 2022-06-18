@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
-using Lab1Rina.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using Lab1Rina.Data;
+using Lab1Rina.Models;
+
 
 namespace Lab1Rina.Controllers
 {
@@ -23,7 +17,7 @@ namespace Lab1Rina.Controllers
         }
 
 
-        [HttpGet ("GetPompa")]
+        [HttpGet("GetPompa")]
         public async Task<ActionResult<List<Pompa>>> Get()
         {
             return Ok(await _context.Pompa.ToListAsync());
@@ -31,7 +25,7 @@ namespace Lab1Rina.Controllers
 
 
 
-        //Get a single Pompe by id
+        //Get a single Bus by id
         [HttpGet("{id}")]
         public async Task<ActionResult<List<Pompa>>> Get(int id)
         {
@@ -42,8 +36,8 @@ namespace Lab1Rina.Controllers
         }
 
 
-        //Create a Pompa
-        [HttpPost ("ShtoPompa")]
+        //Create Pompa
+        [HttpPost("ShtoPompa")]
         public async Task<ActionResult<List<Pompa>>> AddPompa(Pompa pompa)
         {
             _context.Pompa.Add(pompa);
@@ -56,14 +50,17 @@ namespace Lab1Rina.Controllers
         [HttpPut("UpdatePompa")]
         public async Task<ActionResult<Pompa>> UpdatePompa(Pompa request)
         {
-            var dbpompa = await _context.Pompa.FindAsync(request.Id);
+            var dbpompa = await _context.Pompa.FindAsync(request.PompaId);
             if (dbpompa == null)
-                return BadRequest("pompa not found");
-
-            dbpompa.Name = request.Name;
-            dbpompa.Adress = request.Adress;
+                return BadRequest("Pompa not found");
 
 
+            if (!request.Emri.Equals(""))
+                dbpompa.Emri = request.Emri;
+            if (!request.EmriRruges.Equals(""))
+                dbpompa.EmriRruges = request.EmriRruges;
+            if (!request.ZipCode.Equals(""))
+                dbpompa.ZipCode = request.ZipCode;
 
 
             await _context.SaveChangesAsync();
@@ -71,11 +68,11 @@ namespace Lab1Rina.Controllers
             return Ok(await _context.Pompa.ToListAsync());
         }
 
-        //Delete a Pompa
-        [HttpDelete("DeletePompa")]
-        public async Task<ActionResult<List<Pompa>>> DeletePompa(int id)
+        //Delete a Bus
+        [HttpDelete("FshijPompa")]
+        public async Task<ActionResult<List<Pompa>>> DeletePompa(int pompaId)
         {
-            var dbpompa = await _context.Pompa.FindAsync(id);
+            var dbpompa = await _context.Pompa.FindAsync(pompaId);
             if (dbpompa == null)
                 return BadRequest("Pompa not found");
 
