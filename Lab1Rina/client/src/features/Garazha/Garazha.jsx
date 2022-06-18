@@ -76,7 +76,7 @@ export default function Garazha() {
                                <td>{garazha.kompaniaId}</td>
                                <td>
 
-                <Link to="/GarazhaUpdate">
+                <Link to="/GarazhaUpdate" state={{garazhaID:garazha.garazhaId}}>
                             <button type="button" onClick={handleEdit}  
                                    className="btn btn-light mr-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">

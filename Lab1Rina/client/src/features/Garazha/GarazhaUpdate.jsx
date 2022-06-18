@@ -2,37 +2,35 @@ import TextField from '@mui/material/TextField';
 import { React, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 export default function GarazhaUpdate() {
     
+    const location = useLocation();
+
     const[garazha, setGarazha] = useState([]);
     const [refreshKey, setRefreshKey] = useState('0');
     const navigate = useNavigate();
-    
-    //get data from database
-    useEffect(() => {
-        axios.get('https://localhost:7147/api/Garazha/GetGarazha')
-            .then(response => {
-                setGarazha(response.data);
-            })
-    }, [refreshKey])
 
-    const[garazhaId,setGarazhaId]=useState('');
+    const[garazhaID, setGarazhaID] = useState();
+    
+
+    useEffect(() => {
+        if(location.state != null){
+            setGarazhaID(location.state.garazhaID);
+        }
+    }, [garazhaID])
+
     const [emriRruges, setEmriRruges] = useState('');
     const [zipCode, setZipCode] = useState('');
     const [kompaniaId, setKompaniaId] = useState('');
- 
-    
-    
-   
-
     
         const handleEdit = (e) => {
             e.preventDefault();
-            const Garazha= { garazhaId, emriRruges,zipCode,kompaniaId};
+            const Garazha= { garazhaID, emriRruges,zipCode,kompaniaId};
             
-            garazha.map((GarazhaUpdate) => {
-                if (garazhaId == GarazhaUpdate.garazhaId) {
+            console.log(Garazha);
+               
                         axios.put('https://localhost:7147/api/Garazha/UpdateGarazha', Garazha)
                         .then((response) => {
                             console.log((Garazha));
@@ -41,8 +39,8 @@ export default function GarazhaUpdate() {
                         window.confirm('Garazha u perditesua me sukses!')
                         navigate('../garazha');
                     })
-                }
-            })
+                
+            
             
         }
     
@@ -60,8 +58,8 @@ export default function GarazhaUpdate() {
                 required
                 id="filled-required"
                 label="Id"
-                value={garazhaId}
-                onChange={(e) => setGarazhaId(e.target.value)}
+                value={garazhaID}
+                disabled
             />
             <TextField
                 required
@@ -79,7 +77,6 @@ export default function GarazhaUpdate() {
                  onChange={(e) => setZipCode(e.target.value)}
             />
             <TextField
-                required
                 id="filled-required"
                 label="Kompania Id"
                 variant="standard"
