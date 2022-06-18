@@ -1,6 +1,5 @@
 global using Microsoft.EntityFrameworkCore;
 using Lab1Rina.Data;
-using Lab1Rina.Models;
 using System.Text.Json.Serialization;
 
 

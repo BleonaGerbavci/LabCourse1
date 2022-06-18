@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RW9NTbgJ4zz0zIJ/wPd07sCDMOd3FFbw/CVbsPVH4tliDjyycrlY0y/zQfToiBzQQvTBGJtbFlGXuBPNFqLO8Q==",
+  "dgSpecHash": "ud8c7owrGEPbfQKNobPS+xPXor1PcWVYZMcYNZq3t8EaBpjMMseGSGyMEuRkeLKQr6kdGUF1qrJPAG0chjOvtA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LED-COM.CH\\Desktop\\Lab1Rina\\Lab1Rina\\Lab1Rina.csproj",
+  "projectFilePath": "C:\\Users\\LED-COM.CH\\Documents\\GitHub\\LabCourse1\\Lab1Rina\\Lab1Rina.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LED-COM.CH\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\LED-COM.CH\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LED-COM.CH\\Desktop\\Lab1Rina\\Lab1Rina\\Lab1Rina.csproj": {}
+    "C:\\Users\\LED-COM.CH\\Documents\\GitHub\\LabCourse1\\Lab1Rina\\Lab1Rina.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LED-COM.CH\\Desktop\\Lab1Rina\\Lab1Rina\\Lab1Rina.csproj": {
+    "C:\\Users\\LED-COM.CH\\Documents\\GitHub\\LabCourse1\\Lab1Rina\\Lab1Rina.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LED-COM.CH\\Desktop\\Lab1Rina\\Lab1Rina\\Lab1Rina.csproj",
+        "projectUniqueName": "C:\\Users\\LED-COM.CH\\Documents\\GitHub\\LabCourse1\\Lab1Rina\\Lab1Rina.csproj",
         "projectName": "Lab1Rina",
-        "projectPath": "C:\\Users\\LED-COM.CH\\Desktop\\Lab1Rina\\Lab1Rina\\Lab1Rina.csproj",
+        "projectPath": "C:\\Users\\LED-COM.CH\\Documents\\GitHub\\LabCourse1\\Lab1Rina\\Lab1Rina.csproj",
         "packagesPath": "C:\\Users\\LED-COM.CH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LED-COM.CH\\Desktop\\Lab1Rina\\Lab1Rina\\obj\\",
+        "outputPath": "C:\\Users\\LED-COM.CH\\Documents\\GitHub\\LabCourse1\\Lab1Rina\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LED-COM.CH\\AppData\\Roaming\\NuGet\\NuGet.Config",
