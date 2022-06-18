@@ -25,6 +25,10 @@ import Qyteti from '../cruds/qyteti-crud/Qyteti';
 import QytetiCrud from '../cruds/qyteti-crud/qyteti-crud';
 import QytetiAdd from '../cruds/qyteti-crud/QytetiAdd';
 import QytetiUpdate from '../cruds/qyteti-crud/QytetiUpdate';
+import User from '../cruds/user-crud/User';
+import UserCrud from '../cruds/user-crud/user-crud';
+import UserAdd from '../cruds/user-crud/UserAdd';
+import UserUpdate from '../cruds/user-crud/UserUpdate';
 
 
 export default function Dashboard(){
@@ -65,6 +69,12 @@ export default function Dashboard(){
              Qyteti
             </NavLink>
           </li>
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-outline-secondary" to="./user">
+            User
+            </NavLink>
+          </li>
+
         </ul>
       </nav>
 
@@ -86,15 +96,18 @@ export default function Dashboard(){
             <Route path='/pompaUpdate' element={<PompaUpdate />}/>
             <Route path='/pompaAdd' element={<PompaAdd />}/>
             <Route path='/PompaCrud' element={<PompaCrud />}/>
-            <Route path='/StacioniCrud' element={<StacioniCrud />} />
+            <Route path='/StacioniCrud/*' element={<StacioniCrud />} />
             <Route path='/stacioni' element={<Stacioni />} />
             <Route path='/stacioniAdd' element={<StacioniAdd />} />
             <Route path='/stacioniUpdate' element={<StacioniUpdate />} />
-            <Route path='/QytetiCrud' element={<QytetiCrud />} />
+            <Route path='/QytetiCrud/*' element={<QytetiCrud />} />
             <Route path='/qyteti' element={<Qyteti />} />
             <Route path='/qytetiAdd' element={<QytetiAdd />} />
             <Route path='/qytetiUpdate' element={<QytetiUpdate />} />
-            
+            <Route path='/UserCrud/*' element={<UserCrud />} />
+            <Route path='/user' element={<User />} />
+            <Route path='/userAdd' element={<UserAdd />} />
+            <Route path='/userUpdate' element={<UserUpdate />} />           
             
 
         </Routes>

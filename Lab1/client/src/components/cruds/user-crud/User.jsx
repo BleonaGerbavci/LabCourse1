@@ -1,21 +1,21 @@
 import React,{ useState, useEffect } from 'react';
 import axios from 'axios';
-import handleEdit from './QytetiUpdate';
+import handleEdit from './UserUpdate';
 import { Link } from 'react-router-dom';
 
 
 
-export default function Qyteti() {
+export default function User() {
 
-    const[qytetet, setQytetet] = useState([]);
+    const[users, setUsers] = useState([]);
 
     const [refreshKey, setRefreshKey] = useState('0');
     
     //get data from database
     useEffect(() => { 
-        axios.get('https://localhost:7138/api/Qyteti/GetQytetet')
+        axios.get('https://localhost:7138/api/User/GetUsers')
             .then(response => {
-                setQytetet(response.data);
+                setUsers(response.data);
             })
     }, [refreshKey])
 
@@ -23,18 +23,18 @@ export default function Qyteti() {
 
 
      //Delete data in database    
-     function deleteQyteti(qytetiId) {
+     function deleteUser(userId) {
         const confirmBox = window.confirm(
-            "A jeni te sigurte qe deshironi te fshini qytetin me zipkod " + qytetiId  +"?  " 
+            "A jeni te sigurte qe deshironi te fshini userin me id " + userId  +"?  " 
         )
         if (confirmBox === true) {
-            axios.delete('https://localhost:7138/api/Qyteti/FshijQytetin?zipcode=' + qytetiId)
+            axios.delete('https://localhost:7138/api/User/FshijUserin?userId=' + userId)
                 .then(() => {
                     setRefreshKey(refreshKey => refreshKey + 1)
                 })
         }
         else {
-            console.log("Process of deleting a qytet canceled !!");
+            console.log("Process of deleting a user canceled !!");
         }
     }
 
@@ -43,10 +43,10 @@ export default function Qyteti() {
         return(
             <div>
                 <br /><br />
-                <Link to="../qytetiAdd">
+                <Link to="../userAdd">
                 <button  type="button " 
                  className="btn btn-outline-secondary">
-                 Shto Qytetin
+                 Shto User
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -60,22 +60,37 @@ export default function Qyteti() {
                 <table className="table table-striped">
                     <thead>
                         <tr>
-                            <th>Zip Kodi</th>
-                            <th>Emri i qytetit</th>
+                            <th>User Id</th>
+                            <th>Emri</th>
+                            <th>Mbiemri</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Numri i telefonit</th>
+                            <th>Roli</th>
+                            <th>Qyteti</th>
+                            <th>Orari</th>
+                            <th>Ditet e pushimit</th>
+
                             <th>Opsionet</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {qytetet.map(qyteti=>(
-                           <tr key={qyteti.qytetiZipCode}>
-                               <td>{qyteti.qytetiZipCode}</td>
-                               <td>{qyteti.emriQytetit}</td>
+                        {users.map(useri=>(
+                           <tr key={useri.userId}>
+                               <td>{useri.userId}</td>
+                               <td>{useri.emri}</td>
+                               <td>{useri.mbiemri}</td>
+                               <td>{useri.emaili}</td>
+                               <td>{useri.passwordi}</td>
+                               <td>{useri.nrTelefonit}</td>
+                               <td>{useri.roliId}</td>
+                               <td>{useri.zipCode}</td>
+                               <td>{useri.orari}</td>
+                               <td>{useri.ditetEpushimit}</td>
                              
-                              
-                            
                                <td>
                                   
-                               <Link to="../QytetiUpdate">
+                               <Link to="../UserUpdate">
                                    <button type="button"   onClick={handleEdit}
                                    className="btn btn-light mr-1">
                                     <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -85,7 +100,7 @@ export default function Qyteti() {
                                    </button> 
                                 </Link>
                                   
-                                   <button type="button" onClick={() => deleteQyteti(qyteti.qytetiZipCode)}
+                                   <button type="button" onClick={() => deleteUser(useri.userId)}
                                    className="btn btn-light mr-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
