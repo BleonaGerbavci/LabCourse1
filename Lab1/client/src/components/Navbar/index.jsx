@@ -5,6 +5,7 @@ from './NavbarElements';
 import Dashboard from '../Dashboard/index';
 import { Link } from 'react-router-dom';
 import Logo from '../../images/logo-white.svg'
+import Services from '../Services';
 
 
 const Navbar = ({ toggle }) => {
@@ -27,7 +28,7 @@ const Navbar = ({ toggle }) => {
               <NavLinks to='Dashboard'>Dashboard</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='services'>Sherbimet</NavLinks>
+              <NavLinks to='Services'>Sherbimet</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to='signup'>Regjistrohu</NavLinks>
