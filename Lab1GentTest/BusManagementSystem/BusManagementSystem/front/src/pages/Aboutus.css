@@ -1,0 +1,161 @@
+.text-1{
+ position: absolute;
+height: 50px;
+left: 420px;
+top: 200px;
+font-size: 50px;
+font-weight: bold;
+font-style:italic;
+color: #000000;
+}
+
+.text-2{
+    position: absolute;
+    width: 700px;
+    height: 244px;
+    left: 200px;
+    top: 300px;
+    font-style:italic;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 45px;
+    text-align: center;
+     }
+
+  .Logo{
+ 
+    position: absolute;
+    width: 200px;
+    height: 180px;
+    left: 1000px;
+    top: 150px;
+  
+  }
+ 
+  .employ{
+  position: absolute;
+  width: 100px;
+  left: 400px;
+  top: 700px;
+
+  }
+
+  .employy{
+    position: absolute;
+  width: px;
+  left: 140px;
+  top: 25px;
+  height: 50px;
+  font-size: 25px;
+font-style:italic;
+color: #000000;
+font-weight: bold;
+white-space: nowrap;
+
+}
+
+.mapp{
+  position: absolute;
+  width: 100px;
+  left: 850px;
+  top: 700px;
+
+
+}
+
+.map-text{
+  position: absolute;
+  width: px;
+  left: 140px;
+  top: 25px;
+  height: 50px;
+  font-size: 25px;
+font-style:italic;
+color: #000000;
+font-weight: bold;
+white-space: nowrap;
+
+
+}
+
+.mann{
+  position: absolute;
+  width: 100px;
+  left: 1300px;
+  top: 700px;
+}
+
+.man-text{
+  position: absolute;
+  width: -100px;
+  left: 140px;
+  top: 25px;
+  height: 50px;
+  font-size: 25px;
+font-style:italic;
+color: #000000;
+font-weight: bold;
+white-space: nowrap;
+}
+  
+.busii{
+  position: absolute;
+  width: 100px;
+  left: 400px;
+  top: 900px;
+
+}
+
+.bus-text{
+  position: absolute;
+  left: 140px;
+  top: 25px;
+  font-size: 25px;
+font-style:italic;
+color: #000000;
+font-weight: bold;
+white-space: nowrap;
+}
+  
+.expp{
+  position: absolute;
+  width: 100px;
+  left: 850px;
+  top: 900px;
+
+
+}
+
+.exp-text{
+  position: absolute;
+  width: px;
+  left: 140px;
+  top: 25px;
+  height: 50px;
+  font-size: 25px;
+font-style:italic;
+color: #000000;
+font-weight: bold;
+white-space: nowrap;
+
+
+}
+.locationn{
+  position: absolute;
+  width: 100px;
+  left: 1300px;
+  top: 900px;
+}
+
+.location-text{
+  position: absolute;
+  width: -100px;
+  left: 140px;
+  top: 25px;
+  height: 50px;
+  font-size: 25px;
+font-style:italic;
+color: #000000;
+font-weight: bold;
+white-space: nowrap;
+}

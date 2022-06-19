@@ -2,10 +2,8 @@ import React from 'react'
 import {FaBars } from 'react-icons/fa'
 import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink }
 from './NavbarElements';
-import Dashboard from '../Dashboard/index';
-import { Link } from 'react-router-dom';
 import Logo from '../../images/logo-white.svg'
-import Services from '../Services';
+
 
 
 const Navbar = ({ toggle }) => {
@@ -25,17 +23,17 @@ const Navbar = ({ toggle }) => {
               <NavLinks to='about'>Rreth Nesh</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='Dashboard'>Dashboard</NavLinks>
+              <NavLinks to='../Dashboard'>Dashboard</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='Services'>Sherbimet</NavLinks>
+              <NavLinks to='../Services'>Sherbimet</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to='signup'>Regjistrohu</NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to="/signin">Kycu</NavBtnLink>
+            <NavBtnLink to="../signin">Kycu</NavBtnLink>
           </NavBtn>
         </NavbarContainer>
       </Nav>
