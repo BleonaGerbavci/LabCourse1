@@ -57,9 +57,9 @@ namespace Lab1Rina.Controllers
 
             if (!request.EmriRruges.Equals(""))
                 dbgarazha.EmriRruges = request.EmriRruges;
-            if (!request.ZipCode.Equals(""))
+            if (!(request.ZipCode <= 0) )
                 dbgarazha.ZipCode = request.ZipCode;
-            if (!request.KompaniaId.Equals(""))
+            if (!(request.KompaniaId <= 0))
                 dbgarazha.KompaniaId = request.KompaniaId;
 
 

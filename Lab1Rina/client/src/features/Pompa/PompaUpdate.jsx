@@ -2,37 +2,35 @@ import TextField from '@mui/material/TextField';
 import { React, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 export default function PompaUpdate() {
     
-    const[pompa, setPompa] = useState([]);
+    const location = useLocation();
+
+    // const[pompa, setPompa] = useState([]);   A me fshi qeto
     const [refreshKey, setRefreshKey] = useState('0');
     const navigate = useNavigate();
+
+    const[pompaId, setPompaId] = useState();
     
     //get data from database
     useEffect(() => {
-        axios.get('https://localhost:7147/api/Pompa/GetPompa')
-            .then(response => {
-                setPompa(response.data);
-            })
-    }, [refreshKey])
+        if(location.state != null){
+            setPompaId(location.state.pompaId);
+        }
+    }, [pompaId])
 
-    const[pompaId,setPompaId]=useState('');
     const [emri, setEmri] = useState('');
     const [emriRruges, setEmriRruges] = useState('');
     const [zipCode, setZipCode] = useState('');
 
-    
-    
-   
-
-    
         const handleEdit = (e) => {
             e.preventDefault();
-            const Pompa = { pompaId,emri,emriRruges,zipCode};
-
-            pompa.map((PompaUpdate) => {
-                if (pompaId == PompaUpdate.pompaId) {
+            const Pompa= { pompaId,emri, emriRruges,zipCode};
+            
+            console.log(Pompa);
+               
                         axios.put('https://localhost:7147/api/Pompa/UpdatePompa', Pompa)
                         .then((response) => {
                             console.log((Pompa));
@@ -41,8 +39,8 @@ export default function PompaUpdate() {
                         window.confirm('Pompa u perditesua me sukses!')
                         navigate('../pompa');
                     })
-                }
-            })
+                
+            
             
         }
     
@@ -51,7 +49,7 @@ export default function PompaUpdate() {
             <>
                 <br />
                        <h4 className="d-flex justify-content m-3">
-                       Perditeso Pompen
+                       Perditeso Pompa
                        </h4>
                 <br />
     
@@ -61,10 +59,9 @@ export default function PompaUpdate() {
                 id="filled-required"
                 label="Id"
                 value={pompaId}
-                onChange={(e) => setPompaId(e.target.value)}
+                disabled
             />
             <TextField
-                required
                 id="filled-required"
                 label="Emri"
                 variant="standard"
@@ -86,6 +83,7 @@ export default function PompaUpdate() {
                  value={zipCode}
                  onChange={(e) => setZipCode(e.target.value)}
             />
+            
                             
                            
             <br /><br />

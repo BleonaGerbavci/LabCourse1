@@ -57,7 +57,6 @@ const [refreshKey, setRefreshKey] = useState('0');
                                 />
                                 
                                 <TextField
-                                    required
                                     id="filled-required"
                                     label="Kompania Id"
                                     variant="standard"

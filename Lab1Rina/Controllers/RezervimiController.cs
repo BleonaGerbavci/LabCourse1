@@ -63,9 +63,9 @@ namespace Lab1Rina.Controllers
                 dbrezervimi.Emaili = request.Emaili;
             if (!request.NrTelefonit.Equals(""))
                 dbrezervimi.NrTelefonit = request.NrTelefonit;
-            if (!request.UserId.Equals(""))
+            if (!(request.UserId <= 0))
                 dbrezervimi.UserId = request.UserId;
-            if (!request.LinjaId.Equals(""))
+            if (!(request.LinjaId <= 0))
                 dbrezervimi.LinjaId = request.LinjaId;
 
             await _context.SaveChangesAsync();

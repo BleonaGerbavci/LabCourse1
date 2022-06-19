@@ -1,51 +1,51 @@
 import React,{Component, useState, useEffect } from 'react';
 import axios from 'axios';
 import TextField from '@mui/material/TextField';
-import handleEdit from './PompaUpdate';
+import handleEdit from './RezervoAutobusinUpdate';
 import { Link } from 'react-router-dom';
 
 
-export default function Pompa() {
+export default function RezervoAutobusin() {
 
-    const[pompa, setPompa] = useState([]);
+    const[rezervoAutobusin, setRezervoAutobusin] = useState([]);
 
     const [refreshKey, setRefreshKey] = useState('0');
     
     //get data from database
     useEffect(() => {
-        axios.get('https://localhost:7147/api/Pompa/GetPompa')
+        axios.get('https://localhost:7147/api/RezervoAutobusin/GetRezervoAutobusin')
             .then(response => {
-                setPompa(response.data);
+                setRezervoAutobusin(response.data);
             })
     }, [refreshKey])
 
 
 
 
-    //Delete data in database    
-    function deletePompa(pompaId) {
+     //Delete data in database    
+     function deleteRezervoAutobusin(rezervimiId) {
         const confirmBox = window.confirm(
-            "A jeni te sigurte qe deshironi te fshini garazhen me id  " + pompaId  +"?  " 
+            "A jeni te sigurte qe deshironi te fshini rezervoAutobusin me id  " + rezervimiId  +"?  " 
         )
+
         if (confirmBox === true) {
-            axios.delete('https://localhost:7147/api/Pompa/FshijPompa?pompaId=' + pompaId)
+            axios.delete('https://localhost:7147/api/RezervoAutobusin/FshijRezervoAutobusin?rezervimiId=' + rezervimiId)
                 .then(() => {
                     setRefreshKey(refreshKey => refreshKey + 1)
                 })
         }
         else {
-            console.log("Process of deleting a pompa canceled !!");
+            console.log("Process of deleting a RezervoAutobusin canceled !!");
         }
     }
-
     return(
  
             <div>
                  <br /><br />
-                 <Link to="/pompaAdd">
+                 <Link to="/rezervoAutobusinAdd">
                            <button  type="button " 
                                 className="btn btn-outline-secondary">
-                                    Shto Pompen
+                                    Shto RezervoAutobusin
                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -61,22 +61,24 @@ export default function Pompa() {
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Emri</th>
-                            <th>Emri i rruges</th>
-                            <th>Zip Kodi</th>
+                            <th>Data Rezervimit</th>
+                            <th>Data Kthimit</th>
+                            <th>User</th>
+                            <th>Autobusi</th>
                             <th>Opsionet</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {pompa.map(pompa=>(
-                           <tr key={pompa.pompaId}>
-                               <td>{pompa.pompaId}</td>
-                               <td>{pompa.emri}</td>
-                               <td>{pompa.emriRruges}</td>
-                               <td>{pompa.zipCode}</td>
+                        {rezervoAutobusin.map(rezervoAutobusin=>(
+                           <tr key={rezervoAutobusin.rezervimiId}>
+                               <td>{rezervoAutobusin.rezervimiId}</td>
+                               <td>{rezervoAutobusin.dataRezervimit}</td>
+                               <td>{rezervoAutobusin.dataKthimit}</td>
+                               <td>{rezervoAutobusin.userId}</td>
+                               <td>{rezervoAutobusin.autobusiId}</td>
                                <td>
 
-                <Link to="/PompaUpdate" state={{pompaId:pompa.pompaId}}>
+                <Link to="/RezervoAutobusinUpdate" state={{rezervimiId:rezervoAutobusin.rezervimiId}}>
                             <button type="button" onClick={handleEdit}  
                                    className="btn btn-light mr-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -85,7 +87,7 @@ export default function Pompa() {
                                     </svg>
                                    </button>
                                    </Link>
-                                   <button type="button" onClick={() => deletePompa(pompa.pompaId)}
+                                   <button type="button" onClick={() => deleteRezervoAutobusin(rezervoAutobusin.rezervimiId)}
                                    className="btn btn-light mr-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>

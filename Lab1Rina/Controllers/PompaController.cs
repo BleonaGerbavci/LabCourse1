@@ -59,7 +59,7 @@ namespace Lab1Rina.Controllers
                 dbpompa.Emri = request.Emri;
             if (!request.EmriRruges.Equals(""))
                 dbpompa.EmriRruges = request.EmriRruges;
-            if (!request.ZipCode.Equals(""))
+            if (!(request.ZipCode <= 0))
                 dbpompa.ZipCode = request.ZipCode;
 
 

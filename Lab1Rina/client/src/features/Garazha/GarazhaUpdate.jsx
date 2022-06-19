@@ -8,13 +8,13 @@ export default function GarazhaUpdate() {
     
     const location = useLocation();
 
-    const[garazha, setGarazha] = useState([]);
+    // const[garazha, setGarazha] = useState([]);   A me fshi qeto
     const [refreshKey, setRefreshKey] = useState('0');
     const navigate = useNavigate();
 
     const[garazhaID, setGarazhaID] = useState();
     
-
+    //get data from database
     useEffect(() => {
         if(location.state != null){
             setGarazhaID(location.state.garazhaID);

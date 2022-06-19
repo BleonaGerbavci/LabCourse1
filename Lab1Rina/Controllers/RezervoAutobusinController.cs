@@ -59,9 +59,9 @@ namespace Lab1Rina.Controllers
                 dbrezervoAutobusin.DataRezervimit = request.DataRezervimit;
             if (!request.DataKthimit.Equals(""))
                 dbrezervoAutobusin.DataKthimit = request.DataKthimit;
-            if (!request.UserId.Equals(""))
+            if (!(request.UserId  <= 0))
                 dbrezervoAutobusin.UserId = request.UserId;
-            if (!request.AutobusiId.Equals(""))
+            if (!(request.AutobusiId <= 0))
                 dbrezervoAutobusin.AutobusiId = request.AutobusiId;
 
             await _context.SaveChangesAsync();
@@ -71,9 +71,9 @@ namespace Lab1Rina.Controllers
 
         //Delete a Bus
         [HttpDelete("FshijRezervoAutobusin")]
-        public async Task<ActionResult<List<RezervoAutobusin>>> DeleteRezervoAutobusin(int id)
+        public async Task<ActionResult<List<RezervoAutobusin>>> DeleteRezervoAutobusin(int rezervimiId)
         {
-            var dbrezervoAutobusin = await _context.RezervoAutobusin.FindAsync(id);
+            var dbrezervoAutobusin = await _context.RezervoAutobusin.FindAsync(rezervimiId);
             if (dbrezervoAutobusin == null)
                 return BadRequest("RezervoAutobusin not found");
 

@@ -25,7 +25,7 @@ export default function Rezervimi() {
     //Delete data in database    
     function deleteRezervimi(rezervimiId) {
         const confirmBox = window.confirm(
-            "A jeni te sigurte qe deshironi te fshini rezervimin me id  " + rezervimiId  +"?  " 
+            "A jeni te sigurte qe deshironi te fshini garazhen me id  " + rezervimiId  +"?  " 
         )
         if (confirmBox === true) {
             axios.delete('https://localhost:7147/api/Rezervimi/FshijRezervimi?rezervimiId=' + rezervimiId)
@@ -57,7 +57,7 @@ export default function Rezervimi() {
         <br />
         <br />
                
-                <table className="table table-striped">
+        <table className="table table-striped">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -71,17 +71,17 @@ export default function Rezervimi() {
                         </tr>
                     </thead>
                     <tbody>
-                        {rezervimi.map(Rezervimi=>(
+                        {rezervimi.map(rezervimi=>(
                            <tr key={rezervimi.rezervimiId}>
                                <td>{rezervimi.rezervimiId}</td>
                                <td>{rezervimi.emri}</td>
+                               <td>{rezervimi.mbiemri}</td>
                                <td>{rezervimi.emaili}</td>
                                <td>{rezervimi.nrTelefonit}</td>
                                <td>{rezervimi.userId}</td>
                                <td>{rezervimi.linjaId}</td>
                                <td>
-
-                <Link to="/RezervimiUpdate">
+                <Link to="/RezervimiUpdate" state={{rezervimiID:rezervimi.rezervimiId}}>
                             <button type="button" onClick={handleEdit}  
                                    className="btn btn-light mr-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">

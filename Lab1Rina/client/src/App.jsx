@@ -1,19 +1,17 @@
-// import Home from './features/Home/Home';
 import Pompa  from './features/Pompa/Pompa';
 import PompaUpdate from './features/Pompa/PompaUpdate';
 import PompaAdd from './features/Pompa/PompaAdd';
 import Garazha from './features/Garazha/Garazha';
 import GarazhaUpdate from './features/Garazha/GarazhaUpdate';
 import GarazhaAdd from './features/Garazha/GarazhaAdd';
-import Rezervimi  from './features/Pompa/Pompa';
-import RezervimiUpdate from './features/Pompa/PompaUpdate';
-import RezervimiAdd from './features/Pompa/PompaAdd';
-// import RezervoAutobusin from './features/Garazha/Garazha';
-// import RezervoAutobusinUpdate from './features/Garazha/GarazhaUpdate';
-// import RezervoAutobusinAdd from './features/Garazha/GarazhaAdd';
+import Rezervimi  from './features/Rezervimi/Rezervimi';
+import RezervimiUpdate from './features/Rezervimi/RezervimiUpdate';
+import RezervimiAdd from './features/Rezervimi/RezervimiAdd';
+import RezervoAutobusin  from './features/RezervoAutobusin/RezervoAutobusin';
+import RezervoAutobusinUpdate from './features/RezervoAutobusin/RezervoAutobusinUpdate';
+import RezervoAutobusinAdd from './features/RezervoAutobusin/RezervoAutobusinAdd';
+
 import {BrowserRouter, Route, Switch,NavLink, Routes} from 'react-router-dom';
-
-
 
 function App() {
   return (
@@ -52,7 +50,6 @@ function App() {
       </nav>
 
       <Routes>
-        {/* <Route path='/' element={<Home />} /> */}
 
         <Route path='/Pompa' element={<Pompa />}/>
         <Route path='/PompaUpdate' element={<PompaUpdate />}/>
@@ -62,13 +59,13 @@ function App() {
         <Route path='/GarazhaUpdate' element={<GarazhaUpdate />} />
         <Route path='/GarazhaAdd' element={<GarazhaAdd />} />
 
-        <Route path='/Rezervimi' element={<Pompa />}/>
-        <Route path='/RezervimiUpdate' element={<PompaUpdate />}/>
-        <Route path='/RezervimiAdd' element={<PompaAdd />} />
+        <Route path='/Rezervimi' element={<Rezervimi />}/>
+        <Route path='/RezervimiUpdate' element={<RezervimiUpdate />}/>
+        <Route path='/RezervimiAdd' element={<RezervimiAdd />} />
 
-        {/* <Route path='/RezervoAutobusin' element={<Garazha />} />
-        <Route path='/RezervoAutobusinUpdate' element={<GarazhaUpdate />} />
-        <Route path='/RezervoAutobusinAdd' element={<GarazhaAdd />} />  */}
+        <Route path='/RezervoAutobusin' element={<RezervoAutobusin />} />
+        <Route path='/RezervoAutobusinUpdate' element={<RezervoAutobusinUpdate />} />
+        <Route path='/RezervoAutobusinAdd' element={<RezervoAutobusinAdd />} /> 
 
  
       </Routes>

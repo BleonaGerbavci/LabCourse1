@@ -35,12 +35,11 @@ const [refreshKey, setRefreshKey] = useState('0');
             <br />
             <br />
                    <h4 className="d-flex justify-content m-3">
-                   Shto Pompen
+                   Shto Pompa
                    </h4>
             <br />
             <br />
                                 <TextField
-                                    required
                                     id="filled-required"
                                     label="Emri"
                                     variant="standard"
@@ -64,7 +63,7 @@ const [refreshKey, setRefreshKey] = useState('0');
                                     value={zipCode}
                                     onChange={(e) => setZipCode(e.target.value)}
                                 />
-                                
+
 
                          
                          <button type="submit" className="btn btn-outline-secondary">
