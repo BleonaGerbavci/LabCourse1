@@ -29,11 +29,13 @@ import User from '../cruds/user-crud/User';
 import UserCrud from '../cruds/user-crud/user-crud';
 import UserAdd from '../cruds/user-crud/UserAdd';
 import UserUpdate from '../cruds/user-crud/UserUpdate';
-
+import Navbar from '../Navbar';
+import Footer from '../footer/footer';
 
 export default function Dashboard(){
   return (
     <div id="dashboard">
+        <Navbar />
         <div>
           <br /> 
         <nav className="navbar navbar-expand-sm bg-light navbar-dark">
@@ -77,6 +79,7 @@ export default function Dashboard(){
 
         </ul>
       </nav>
+      <Footer />
 
         </div>
         <Routes>

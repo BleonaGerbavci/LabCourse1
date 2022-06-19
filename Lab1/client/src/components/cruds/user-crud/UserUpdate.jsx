@@ -12,14 +12,14 @@ export default function UserUpdate() {
 
     const navigate = useNavigate();
     
-    //get data from database
+    
     useEffect(() => { 
         axios.get('https://localhost:7138/api/User/GetUsers')
             .then(response => {
                 setUser(response.data);
             })
     }, [refreshKey])
-
+  
     const [userId, setUserId] = useState('');
     const [emri, setEmri] = useState('');
     const [mbiemri, setMbiemri] = useState('');
@@ -35,7 +35,7 @@ export default function UserUpdate() {
             e.preventDefault();
             const userii = { userId,emri,mbiemri,emaili,passwordi,nrTelefonit,roliId,
                             zipCode,orari,ditetEpushimit };
-            user.map((useri) => {
+            user.map((user) => {
                 if (userId == user.userId) {
                         axios.put('https://localhost:7138/api/User/UpdateUserin', userii)
                         .then(() => {
