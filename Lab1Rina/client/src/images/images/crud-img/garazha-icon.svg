@@ -1,0 +1,23 @@
+<svg width="216" height="215" viewBox="0 0 216 215" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_345_1385)">
+<ellipse cx="108" cy="103.244" rx="104" ry="103.244" fill="white"/>
+<path d="M211.5 103.244C211.5 159.984 165.165 205.987 108 205.987C50.8351 205.987 4.5 159.984 4.5 103.244C4.5 46.5033 50.8351 0.5 108 0.5C165.165 0.5 211.5 46.5033 211.5 103.244Z" stroke="url(#paint0_linear_345_1385)"/>
+</g>
+<path d="M176 84.1544V158H147.667V94.5088C147.667 93.1055 147.07 91.7598 146.007 90.7675C144.944 89.7753 143.503 89.2178 142 89.2178H74C72.4971 89.2178 71.0558 89.7753 69.9931 90.7675C68.9304 91.7598 68.3334 93.1055 68.3334 94.5088V158H40.0001V84.1544C39.9933 81.7439 40.5775 79.3639 41.7081 77.1968C42.8386 75.0297 44.4854 73.133 46.5224 71.6519L97.5223 34.3932C100.51 32.1952 104.202 31 108.006 31C111.809 31 115.502 32.1952 118.489 34.3932L169.489 71.6572C171.524 73.1377 173.169 75.0338 174.298 77.2002C175.427 79.3665 176.009 81.7454 176 84.1544V84.1544ZM135.007 130.667C135.885 133.256 136.332 135.956 136.333 138.672V147.418H130.667V158H119.333V147.418H96.6667V158H85.3333V147.418H79.6667V138.672C79.6673 135.958 80.1145 133.26 80.9927 130.672L87.175 112.498C87.8925 110.348 89.328 108.47 91.2715 107.137C93.2149 105.804 95.5643 105.087 97.9757 105.091H118.024C120.436 105.087 122.785 105.804 124.728 107.137C126.672 108.47 128.107 110.348 128.825 112.498L135.007 130.667ZM97.9757 115.673L94.4 126.254H121.6L118.007 115.673H97.9757Z" fill="#2F2E41"/>
+<defs>
+<filter id="filter0_d_345_1385" x="0" y="0" width="216" height="214.487" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_345_1385"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_345_1385" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_345_1385" x1="108" y1="0" x2="108" y2="206.487" gradientUnits="userSpaceOnUse">
+<stop offset="1" stop-color="#2F2E41" stop-opacity="0.29"/>
+<stop offset="1" stop-color="#2F2E41"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,148 @@
+.icons{
+    margin: 10px;
+    padding: 10px;
+    width: 7vw;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    
+}
+
+.link{
+    display: flex;
+    border-radius: 60px;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    justify-content: space-around;
+    padding-inline: 200px;
+    text-decoration: none;
+   
+}
+
+.link p{
+    text-align: center;
+    color: #2F2E41;
+   
+    
+}
+.link a{
+    text-align: center;
+    color: #2F2E41;
+    text-decoration: none;
+    
+}
+
+.table-container{
+    padding: 0 10%;
+    margin: 40px auto 0;
+   
+}
+
+.heading{
+    font-size: 40px;
+    text-align: center;
+    color: #f1f1f1;
+    margin-bottom: 40px;  
+}
+table{
+    width: 90%;
+    border-collapse: collapse;
+    table-layout:fixed;
+}
+.table thead{
+    background-color: #FC9C09;
+}
+
+.table thead tr th{
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.35px;
+    color: #ffff;
+    opacity: 1;
+    padding: 12px;
+    vertical-align: top;
+    border: 1px solid #2F2E41;
+    
+}
+
+.table tbody tr td{
+    font-size: 14px;
+    letter-spacing: 0.35px;
+    font-weight: normal;
+    color: #2F2E41;
+    background-color: white;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #FC9C09;
+   
+}
+
+.table tbody tr td .btn1 {
+    border-radius: 50px;
+    background: rgba(252, 156, 9, 1);
+    white-space: nowrap;
+    padding:  8px 10px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    margin:auto;
+}
+
+.table tbody tr td .btn2{
+    border-radius: 50px;
+    background: rgb(252, 17, 9);
+    white-space: nowrap;
+    padding:  8px 10px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    margin:auto;
+}
+.button{
+    border-radius: 50px;
+    background: rgba(252, 156, 9, 1);
+    white-space: nowrap;
+    padding:  10px 30px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    text-decoration: none;
+    margin:auto;
+    margin-bottom: 100px;
+    margin-left: 580px;
+
+}
+
+button:hover{
+    color: #FC9C09;
+    background-color: #fff;
+    text-decoration: none;
+    border: 2px solid #ffa958;
+}
+.text-h4{
+    margin-left: 100px;
+    margin-top: 30px;
+    color: #2F2E41;
+    font-size: 24px;
+    text-align: right;
+    
+    max-width: 600px;
+}
+
+
+
+
+
+
+
+

@@ -4,6 +4,7 @@ import {BrowserRouter,  Route ,NavLink, Routes} from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Services from './components/Services';
 import SignIn from './components/Signin';
+import Footer from './components/footer/footer';
 
 function App() {
   return (
@@ -17,8 +18,11 @@ function App() {
         <Route path='/services/*' element={<Services />} />
         <Route path='/signin/*' element={<SignIn />} />
       </Routes>
+      <Footer />
     </div>
+    
     </BrowserRouter>
+
   );
 }
 

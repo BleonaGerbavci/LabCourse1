@@ -51,7 +51,7 @@ export default function LinjaUpdate() {
 
     return (
         <form onSubmit={handleEdit} >
-                <h4 className="d-flex justify-content m-3">
+                <h4 className="text-h4">
                 Perditeso Linje
                 </h4>
                 <br />
@@ -62,6 +62,11 @@ export default function LinjaUpdate() {
                 label="Linja Id"
                 value={linjaId}
                 onChange={(e) => setLinjaId(e.target.value)}
+                sx={{ 
+                    marginLeft:'20px',
+                    marginRight:'20px',   
+                    marginBottom:'20px'                          
+                }}
                 />
                 <TextField
                 required
@@ -69,52 +74,84 @@ export default function LinjaUpdate() {
                 label="Vendi i nisjes"
                 value={vendiINisjes}
                 onChange={(e) => setVendiINisjes(e.target.value)}
+                sx={{ 
+                    marginLeft:'20px',
+                    marginRight:'20px',                             
+                }}
                 />
                 <TextField
                 id="filled"
                 label="Destinacioni"
                 value={destinacioni}
                 onChange={(e) => setDestinacioni(e.target.value)}
+                sx={{ 
+                    marginLeft:'20px',
+                    marginRight:'20px',                             
+                }}
                 />
                 <TextField
                 id="filled"
                 label="Cmimi"
                 value={cmimi}
                 onChange={(e) => setCmimi(e.target.value)}
+                sx={{ 
+                    marginLeft:'20px',
+                    marginRight:'20px',                             
+                }}
                 />
                 <TextField
                 id="filled"
                 label="Koha e nisjes"
                 value={kohaNisjes}
                 onChange={(e) => setKohaNisjes(e.target.value)}
+                sx={{ 
+                    marginLeft:'20px',
+                    marginRight:'20px',                             
+                }}
                 /> 
                 <TextField
                 id="filled"
                 label="Koha e mberritjes"
                 value={kohaMberritjes}
                 onChange={(e) => setKohaMberritjes(e.target.value)}
+                sx={{ 
+                    marginLeft:'20px',
+                    marginRight:'20px',                             
+                }}
                 />
                 <TextField
                 id="filled"
                 label="Kohezgjatja"
                 value={kohezgjatja}
                 onChange={(e) => setKohezgjatja(e.target.value)}
+                sx={{ 
+                    marginLeft:'20px',
+                    marginRight:'20px',                             
+                }}
                 />
                 <TextField
                 id="filled"
                 label="Autobusi Id"
                 value={autobusiId}
                 onChange={(e) => setAutobusiId(e.target.value)}
+                sx={{ 
+                    marginLeft:'20px',
+                    marginRight:'20px',                             
+                }}
                 />
                 <TextField
                 id="filled" 
                 label="Kompania Id"
                 value={kompaniaId}
                 onChange={(e) => setKompaniaId(e.target.value)}
+                sx={{ 
+                    marginLeft:'20px',
+                    marginRight:'20px',                             
+                }}
                 />                 
              <br /><br /><br />
                            
-            <button type="submit" className="btn btn-outline-secondary">
+            <button type="submit" className="button">
                Ruaj ndryshimet
             </button>
         </form>

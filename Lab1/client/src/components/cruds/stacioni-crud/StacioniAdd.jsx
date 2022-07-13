@@ -35,7 +35,7 @@ export default function StacioniAdd(){
         <form onSubmit={handleAdd}>
             <br />
             <br />
-                   <h4 className="d-flex justify-content m-3">
+                   <h4 className=" text-h4">
                    Shto Stacion
                    </h4>
             <br />
@@ -46,18 +46,26 @@ export default function StacioniAdd(){
                             label="Rruga"
                             value={emriRruges}
                             onChange={(e) => setEmriRruges(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                          <TextField
                             id="filled"
                             label="Zip Kodi"
                             value={zipCode}
                             onChange={(e) => setZipCode(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                         
                        <br /> <br />
 
 
-                        <button type="submit" className="btn btn-outline-secondary">
+                        <button type="submit" className="button">
                            Add
                         </button>
             </form>

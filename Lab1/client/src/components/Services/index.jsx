@@ -4,8 +4,7 @@ import ServicesF2 from '../../images/servicesF2.svg'
 import ServicesF3 from '../../images/servicesF3.svg'
 import { ServicesContainer,ServicesH1,ServicesWrapper,ServicesH2,ServicesCard,ServicesIcon,ServicesP } from './ServicesElements'
 import Navbar from '../Navbar'
-import Footer from '../footer/footer'
-import Dashboard from '../Dashboard'
+
 
 const Services = () => {
   return (
@@ -32,7 +31,7 @@ const Services = () => {
 
         </ServicesWrapper>
     </ServicesContainer>
-    <Footer />
+ 
     </>
   )
 }

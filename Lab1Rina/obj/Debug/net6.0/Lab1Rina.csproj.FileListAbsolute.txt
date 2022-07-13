@@ -266,3 +266,6 @@ C:\Users\LED-COM.CH\Documents\GitHub\LabCourse1\Lab1Rina\obj\Debug\net6.0\refint
 C:\Users\LED-COM.CH\Documents\GitHub\LabCourse1\Lab1Rina\obj\Debug\net6.0\Lab1Rina.pdb
 C:\Users\LED-COM.CH\Documents\GitHub\LabCourse1\Lab1Rina\obj\Debug\net6.0\Lab1Rina.genruntimeconfig.cache
 C:\Users\LED-COM.CH\Documents\GitHub\LabCourse1\Lab1Rina\obj\Debug\net6.0\ref\Lab1Rina.dll
+C:\Users\LED-COM.CH\Documents\GitHub\LabCourse1\Lab1Rina\bin\Debug\net6.0\client\package-lock.json
+C:\Users\LED-COM.CH\Documents\GitHub\LabCourse1\Lab1Rina\bin\Debug\net6.0\client\package.json
+C:\Users\LED-COM.CH\Documents\GitHub\LabCourse1\Lab1Rina\bin\Debug\net6.0\client\public\manifest.json

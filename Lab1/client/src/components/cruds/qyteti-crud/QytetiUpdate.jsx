@@ -40,7 +40,7 @@ export default function QytetiUpdate() {
         }
     return (
         <form onSubmit={handleEdit} >
-                <h4 className="d-flex justify-content m-3">
+                <h4 className="text-h4">
                 Perditeso Qytetin
                 </h4>
                <br />
@@ -51,18 +51,26 @@ export default function QytetiUpdate() {
                         label="ZipCode"
                         value={qytetiZipCode}
                         onChange={(e) => setQytetiZipCode(e.target.value)}
+                        sx={{ 
+                            marginLeft:'20px',
+                            marginRight:'20px',                             
+                        }}
                          />
                         <TextField
                         id="filled"
                         label="Emri i qytetit"
                         value={emriQytetit}
                         onChange={(e) => setEmriQytetit(e.target.value)}
+                        sx={{ 
+                            marginLeft:'20px',
+                            marginRight:'20px',                             
+                        }}
                         /> 
                     
                         
              <br /><br /><br />
                            
-            <button type="submit" className="btn btn-outline-secondary">
+            <button type="submit" className="button">
                Ruaj ndryshimet
             </button>
         </form>

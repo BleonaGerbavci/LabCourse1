@@ -48,7 +48,7 @@ export default function UserUpdate() {
         }
     return (
         <form onSubmit={handleEdit} >
-                <h4 className="d-flex justify-content m-3">
+                <h4 className=" text-h4">
                 Perditeso Userin
                 </h4>
                <br />
@@ -58,24 +58,41 @@ export default function UserUpdate() {
                             label="User Id"
                             value={userId}
                             onChange={(e) => setUserId(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',   
+                                marginBottom:'20px'                          
+                            }}
                         /> 
                         <TextField
                             id="filled"
                             label="Emri"
                             value={emri}
                             onChange={(e) => setEmri(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                         <TextField
                             id="filled"
                             label="Mbiemri"
                             value={mbiemri}
                             onChange={(e) => setMbiemri(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                         <TextField
                             id="filled"
                             label="Emaili"
                             value={emaili}
                             onChange={(e) => setEmaili(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         />  
                        
                         <TextField
@@ -83,30 +100,50 @@ export default function UserUpdate() {
                             label="Passwordi"
                             value={passwordi}
                             onChange={(e) => setPasswordi(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                         <TextField
                             id="filled"
                             label="Numri i Telefonit"
                             value={nrTelefonit}
                             onChange={(e) => setNrTelefonit(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                         <TextField
                             id="filled"
                             label="Roli Id"
                             value={roliId}
                             onChange={(e) => setRoliId(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                         <TextField
                             id="filled"
                             label="ZipKodi"
                             value={zipCode}
                             onChange={(e) => setZipCode(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                         <TextField
                             id="filled"
                             label="Orari"
                             value={orari}
                             onChange={(e) => setOrari(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                         <TextField
                             id="filled"
@@ -114,10 +151,14 @@ export default function UserUpdate() {
                             type="number"
                             value={ditetEpushimit}
                             onChange={(e) => setDitetEpushimit(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         />                     
              <br /><br /><br />
                            
-            <button type="submit" className="btn btn-outline-secondary">
+            <button type="submit" className="button">
                Ruaj ndryshimet
             </button>
         </form>

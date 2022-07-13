@@ -48,30 +48,44 @@ export default function KompaniaUpdate() {
 
     return (
         <form onSubmit={handleEdit} >
-                <h4 className="d-flex justify-content m-3">
-                Perditeso Kompanine
+                <h4 className="text-h4">
+                Perditeso kompanine
                 </h4>
                <br />
                <br />
                         <TextField
-                        required
+                       
                         id="filled-required"
                         label="Id"
                         value={kompaniaId}
                         onChange={(e) => setKompaniaId(e.target.value)}
+                        sx={{ 
+                            marginLeft:'20px',
+                            marginRight:'20px',
+                            marginBottom: '20px'
+                        }}
                          />
                         <TextField
-                            required
+                            
                             id="filled-required"
                             label="Emri"
                             value={emri}
                             onChange={(e) => setEmri(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',
+                                marginBottom: '20px'
+                            }}
                         /> 
                         <TextField
                             id="filled-number"
                             label="Email"
                             value={emaili}
                             onChange={(e) => setEmaili(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                         <TextField
                             id="filled"
@@ -79,34 +93,54 @@ export default function KompaniaUpdate() {
                             type="number"
                             value={nrTelefonit}
                             onChange={(e) => setNrTelefonit(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                         <TextField
                             id="filled"
                             label="Numri i adreses"
                             value={nrAdreses}
                             onChange={(e) => setNrAdreses(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                          <TextField
                             id="filled"
                             label="Rruga"
                             value={emriRruges}
                             onChange={(e) => setEmriRruges(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                          <TextField
                             id="filled"
                             label="Zip Kodi"
                             value={zipCode}
                             onChange={(e) => setZipCode(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         /> 
                          <TextField
                             id="filled"
                             label="Pompa Id"
                             value={pompaId}
                             onChange={(e) => setPompaId(e.target.value)}
+                            sx={{ 
+                                marginLeft:'20px',
+                                marginRight:'20px',                             
+                            }}
                         />  
              <br /><br /><br />
                            
-            <button type="submit" className="btn btn-outline-secondary">
+            <button type="submit" className="button">
                Ruaj ndryshimet
             </button>
         </form>

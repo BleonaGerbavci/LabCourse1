@@ -9,10 +9,6 @@ import KompaniaAdd from '../cruds/kompania-crud/KompaniaAdd';
 import KompaniaUpdate from '../cruds/kompania-crud/KompaniaUpdate';
 import LinjaAdd from '../cruds/linja-crud/LinjaAdd';
 import LinjaUpdate from '../cruds/linja-crud/LinjaUpdate';
-import OrariCrud from '../cruds/orari-crud/orari-crud';
-import Orari from '../cruds/orari-crud/Orari';
-import OrariAdd from '../cruds/orari-crud/OrariAdd';
-import OrariUpdate from '../cruds/orari-crud/OrariUpdate';
 import Pompa from '../cruds/pompa-crud/Pompa';
 import PompaCrud from '../cruds/pompa-crud/pompa-crud';
 import PompaAdd from '../cruds/pompa-crud/PompaAdd';
@@ -31,57 +27,56 @@ import UserAdd from '../cruds/user-crud/UserAdd';
 import UserUpdate from '../cruds/user-crud/UserUpdate';
 import Navbar from '../Navbar';
 import Footer from '../footer/footer';
+import KompaniaIcon from '../../images/crud-img/kompania-crud.svg'
+import LinjaIcon from '../../images/crud-img/linja-icon.svg'
+import PompaIcon from '../../images/crud-img/pompa-icon.svg'
+import StacioniIcon from '../../images/crud-img/stacioni-icon.svg'
+import QytetiIcon from '../../images/crud-img/qyteti-icon.svg'
+import UsersIcon from '../../images/crud-img/user-icon.svg'
+import './dashboard-style.css'
+
+
 
 export default function Dashboard(){
   return (
     <div id="dashboard">
         <Navbar />
-        <div>
-          <br /> 
-        <nav className="navbar navbar-expand-sm bg-light navbar-dark">
-        <ul className="navbar-nav">
+       
+        <div className ="container">
         
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-outline-secondary" to="./kompania">
-              Kompania
-            </NavLink>
-          </li>
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-outline-secondary" to="./linja">
-              Linja
-            </NavLink>
-          </li>
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-outline-secondary" to="./orari">
-              Orari
-            </NavLink>
-          </li>
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-outline-secondary" to="./pompa">
-              Pompa
-            </NavLink>
-          </li>
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-outline-secondary" to="./stacioni">
-              Stacioni
-            </NavLink>
-          </li>
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-outline-secondary" to="./qyteti">
-             Qyteti
-            </NavLink>
-          </li>
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-outline-secondary" to="./user">
-            User
-            </NavLink>
-          </li>
 
-        </ul>
-      </nav>
-      <Footer />
+        <div className='navlinks'>
+          <NavLink  to="./kompania">
+                  <img src ={KompaniaIcon} alt="kompania-img" className='icons' />
+                  <p>Kompania</p>
+          </NavLink>
+          <NavLink  to="./linja">
+                  <img src ={LinjaIcon} alt="linja-img" className='icons' />
+                  <p>Linja</p>
+          </NavLink>
+
+          <NavLink  to="./pompa">
+                  <img src ={PompaIcon} alt="pompa-img" className='icons' />
+                  <p>Pompa</p>
+          </NavLink>
+          <NavLink  to="./stacioni">
+                  <img src ={StacioniIcon} alt="stacioni-img" className='icons' />
+                  <p>Stacioni</p>
+          </NavLink>
+          <NavLink  to="./qyteti">
+                  <img src ={QytetiIcon} alt="qyteti-img" className='icons' />
+                  <p>Qyteti</p>
+          </NavLink>
+          <NavLink  to="./user">
+                  <img src ={UsersIcon} alt="users-img" className='icons' />
+                  <p>Users</p>
+          </NavLink>
+        </div>
+
+ 
 
         </div>
+        
         <Routes>
             <Route path='/KompaniaCrud/*' element={<KompaniaCrud />}></Route>
             <Route path='/kompania/*' element={<Kompania />}/>
@@ -91,10 +86,6 @@ export default function Dashboard(){
             <Route path="/linja" element={<Linja />} />
             <Route path="/linjaAdd" element={<LinjaAdd />} />
             <Route path="/linjaUpdate" element={<LinjaUpdate />} />
-            <Route path='/OrariCrud/*' element={<OrariCrud />}></Route>
-            <Route path="/orari" element={<Orari />} />
-            <Route path="/orariAdd" element={<OrariAdd />} />
-            <Route path="/orariUpdate" element={<OrariUpdate />} />
             <Route path='/pompa' element={<Pompa />}/>
             <Route path='/pompaUpdate' element={<PompaUpdate />}/>
             <Route path='/pompaAdd' element={<PompaAdd />}/>
